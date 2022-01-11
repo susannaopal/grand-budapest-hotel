@@ -7,11 +7,22 @@
   <title>The Grand Budapest Hotel</title>
 </head>
 <body>
-  <img src="./images/turing-logo.png" alt="turing logo">
-  <img src="./images/grandbudapest.png" alt="hotel photograph">
-  
+  <section class="user-login-section">
+    <img class="budapest-hotel-img" src="./images/hotel-img.png" alt="hotel photograph">
+    <div class="login-form">
+      <p>Please login to access your hotel reservations: 👇</p>
+      <form class="container">
+        <label for="username-login"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="username-user" required>
+        <label for="user-password"><b>Password:</b></label>
+        <input type="text" placeholder="Enter Password" name="password-user" required>
+        <button class="login-btn" type="submit">Login</button>
+      </form>
+    </div>
+  </section>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
 
 </body>
+
 </html>
