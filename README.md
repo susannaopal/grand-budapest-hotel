@@ -103,3 +103,61 @@ _If you are finished with the functionality and testing of your project_, then y
 [GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
 
 If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
+
+
+//////
+# Title
+Mod + Project Name
+
+
+## Table of Contents
+  - [Abstract](#abstract)
+  - [Technologies](#technologies)
+  - [Code Architecture](#code-architecture)
+  - [Illustrations](#illustrations)
+  - [Install + Setup](#set-up)
+  - [Contributors](#contributors)
+	- [Wins](#wins)
+	- [Challenges + Improvements](#challenges-+-Improvements)
+  - [Project Specs](#project-specs)
+
+## Abstract
+	Overview of project + goals
+
+## Technologies
+  - Javascript
+  - eslint
+  - node
+  - Atom
+	- WebPack
+	- API
+
+
+## Code Architecture
+
+
+## Illustrations
+
+Use https://gifcap.dev/ to make GIFs
+
+
+## Install + Setup
+	- Install instructions, how to access the website and how to use the website
+
+
+
+## Contributors
+  - [NAME](github link)
+
+## Wins
+	- What went well!
+	- Successes
+
+## Challenges + Improvements
+	- What was difficult & how you would like to improve on code/project
+	- Any Bugs
+	- Future Iterations
+
+
+## Project Specs
+  - The project spec & rubric can be found [here](insert project spec sheet here)

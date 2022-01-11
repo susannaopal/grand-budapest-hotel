@@ -3,4 +3,22 @@
 
 body {
   background: $primary-background;
+  display: flex;
+}
+
+.budapest-hotel-img {
+  border: 2px solid gold;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%
+}
+
+.login-form {
+  color: white;
+  border: 2px solid white;
+}
+
+.hidden {
+  display: none;
 }
