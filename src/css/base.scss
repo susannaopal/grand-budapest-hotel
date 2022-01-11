@@ -1,22 +1,30 @@
 /* This is an example of how to import a partial scss file*/
 @import '_variables';
+// @import '_resize';
+@import './_mixins';
+
 
 body {
   background: $primary-background;
   display: flex;
 }
 
+/* ~~~~~ Log-in Page ~~~~~ */
 .budapest-hotel-img {
-  border: 2px solid gold;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%
+  width: 50%
 }
 
 .login-form {
   color: white;
-  border: 2px solid white;
+}
+
+.user-login-section {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  font-weight: bolder;
 }
 
 .hidden {
