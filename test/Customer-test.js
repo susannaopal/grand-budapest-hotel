@@ -15,34 +15,37 @@ describe('Customer', () => {
     });
     customer2 = new Customer ({
       'id': 2,
-      'name': 'Rocio Schuster'
+      'name': ''
     });
     customer3 = new Customer ({
-      'id': 3,
+      'id': '',
       'name': 'Kelvin Schiller'
-        });
-      });
-    
-      it('Should be a function', () => {
-        expect(Customer).to.be.a('function');
     });
+  });
     
-      it('Should be an instance of customer', () => {
-        expect(customer).to.be.an.instanceOf(Customer);
-      });
+  it('Should be a function', () => {
+    expect(Customer).to.be.a('function');
+  });
     
-      it('Should have an ID', () => {
-        expect(customer.id).to.equal(1);
-    });
+  it('Should be an instance of customer', () => {
+    expect(customer).to.be.an.instanceOf(Customer);
+  });
     
-      it('Should have a name', () => {
-        expect(customer.name).to.equal('Leatha Ullrich');
-    });
+  it('Should have an ID', () => {
+    expect(customer.id).to.equal(1);
+  });
 
-    function newFunction() {
-        let customer2;
-        return customer2;
-    }
-    });
+  it('Should have an ID', () => {
+    expect(customer3.id).to.equal('');
+  });
+    
+  it('Should have a name', () => {
+    expect(customer.name).to.equal('Leatha Ullrich');
+  });
+
+  it('Should have a name', () => {
+    expect(customer2.name).to.equal('');
+  });
+});
 
 
