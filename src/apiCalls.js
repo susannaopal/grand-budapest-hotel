@@ -8,7 +8,7 @@ export const fetchAllCustomers = () => {
 };
 
 export const fetchSingleCustomer = (id) => {
-  return fetch('http://localhost:3001/api/v1/customers/${id}')
+  return fetch(`http://localhost:3001/api/v1/customers/${id}`)
     .then(response => response.json())
     .then(data => data)
     .error(error => console.log('Houston, we have a problem!'))
