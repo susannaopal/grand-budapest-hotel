@@ -27,30 +27,29 @@ main {
 }
 
 /* ~~~~~ Log-in Page ~~~~~ */
+.user-login-section {
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+  left: 30%;
+  top: 40%;
+  text-align: center;
+}
+
 .budapest-hotel-img {
   display: block;
-  margin-left: auto;
+  margin-left: 33%;
   margin-right: auto;
   width: 50%
 }
 
 .login-form {
   color: $white-text;
+  margin-left: 18%
 }
 
-.user-login-section {
-  font-family: 'Quicksand', sans-serif;
-  text-align: center;
-  font-weight: bolder;
-}
-
-.user-login-section {
-  display: flex;
-  position: fixed;
-  left: 30%;
-  top: 40%;
-  text-align: center;
-}
+/* ~~~~~ Dashboard View ~~~~~ */
 
 .dashboard-view-section,
 .all-hotel-bookings {
@@ -100,7 +99,7 @@ main {
 
 
 .traveler-details,
-.user-login-section,
+// .user-login-section,
 .money-details,
 .past-bookings,
 .current-bookings,
