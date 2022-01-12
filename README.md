@@ -106,8 +106,8 @@ If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to g
 
 
 //////
-# Title
-Mod + Project Name
+# The Grand Budapest Hotel 
+Mod 2 + Final Solo Project: Hotel Booking Site
 
 
 ## Table of Contents
@@ -125,16 +125,18 @@ Mod + Project Name
 	Overview of project + goals
 
 ## Technologies
-  - Javascript
+  - WebPack
+  - API
+  - node.js
+  - DaysJS
+  - VS CODE
   - eslint
-  - node
-  - Atom
-	- WebPack
-	- API
 
 
 ## Code Architecture
-
+  - Javascript
+  - HTML
+  - SCSS
 
 ## Illustrations
 
@@ -147,7 +149,7 @@ Use https://gifcap.dev/ to make GIFs
 
 
 ## Contributors
-  - [NAME](github link)
+  - [Susanna Carey](https://github.com/susannaopal)
 
 ## Wins
 	- What went well!
@@ -160,4 +162,4 @@ Use https://gifcap.dev/ to make GIFs
 
 
 ## Project Specs
-  - The project spec & rubric can be found [here](insert project spec sheet here)
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/overlook.html)
