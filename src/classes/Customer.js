@@ -1,7 +1,8 @@
 class Customer {
-  constructor(customerData) {
+  constructor(customerData, bookings) {
     this.id = customerData.id;
     this.name = customerData.name;
+    this.bookings = bookings;
   }
 }
 
