@@ -3,10 +3,11 @@
 // @import '_resize';
 @import './_mixins';
 
+//overflow-y: auto;
 
 body {
   font-family: 'Quicksand', sans-serif;
-  color: white;
+  color: $white-text;
   background: $primary-background;
   margin: 0;
   display: flex;
@@ -34,7 +35,7 @@ main {
 }
 
 .login-form {
-  color: white;
+  color: $white-text;
 }
 
 .user-login-section {
