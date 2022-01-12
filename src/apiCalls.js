@@ -42,10 +42,10 @@ export const fetchAllBookings = () => {
 //       Accept: "application/json",
 //       "Content-Type": "application/json",
 //     },
-//     body: JSON.stringify({ 
-//       "userID": 48, 
-//       "date": "2019/09/23", 
-//       "roomNumber": 4 }),
+//     body: JSON.stringify({
+//   "userID": userId,
+//   "date": date,
+//   "roomNumber": roomNumber
 //   })
 //     .then((response) => response.json())
 //     .catch((error) => console.log(error));
