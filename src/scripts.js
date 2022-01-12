@@ -6,7 +6,7 @@ import './css/base.scss';
 import Hotel from './classes/Hotel';
 import Customer from './classes/Customer';
 import domUpdates from './domUpdates';
-import { fetchAllCustomers, fetchSingleTraveler, fetchHotelRooms, fetchAllBookings, PostNewBooking } from './apiCalls';
+import { fetchAllCustomers, fetchSingleCustomer, fetchHotelRooms, fetchAllBookings, PostNewBooking } from './apiCalls';
 
 // import './images/turing-logo.png'
 import './images/hotel-img.png'
@@ -14,14 +14,27 @@ import './images/hotel-img.png'
 
 //GLOBAL VARIABLES
 let hotel;
-let rooms;
-let customers;
+let roomsData;
 let customer;
-let bookings;
+let customerData;
+let bookingsData;
 let booking;
 
+//FUNCTIONS
+
+// function fetchApiData() {
+//     Promise.all([fetchSingleCustomer(48), fetchHotelRoooms(), fetchAllBookings()]);
+//   .then(data => {
+//       customerData = new Customer(data[0]);
+//       hotelData = new Hotel (data[1], data[2])
+//   });
+// };
 
 
+
+
+//EVENT LISTENERS 
+// window.addEventListener('load', fetchApiData);
 
 
 
