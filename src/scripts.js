@@ -26,11 +26,13 @@ function loadApiData() {
       customer = new Customer(data[0]);
       hotel = new Hotel(data[0], data[1], data[2])
       loadCustomer(customer);
+      hotel.findCurrentCustomerBookings();
     });
 }
 
 function loadCustomer(customer) {
   domUpdates.greetCustomerByName(customer);
+  domUpdates.displayCurrentCustomerBookings(hotel.currentCustomerBookings);
 }
 
 //EVENT LISTENERS 

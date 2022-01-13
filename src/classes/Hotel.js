@@ -1,32 +1,32 @@
-import { LoaderTargetPlugin } from "webpack";
 
 class Hotel {
-  constructor(roomData, bookingData, customerData) {  
-    this.roomData = roomData;
-    this.bookingData = bookingData;
+  constructor(hotelData, roomData, bookingData, customerData) {  
+    this.hotels = hotelData;
+    this.rooms = roomData;
+    this.bookings = bookingData;
     //AM I IMPORTING CUSTOMER CORRECTLY BELOW
     this.customersData = customerData;
-    this.id = bookingData.id;
-    this.userID = bookingData.userID
-    this.roomType = bookingData.roomType;
-    this.date = bookingData.date;
-    this.roomNumber = bookingData.roomNumer;
+    this.id = hotelData.id;
+    this.userID = hotelData.userID
+    this.roomType = hotelData.roomType;
+    this.date = hotelData.date;
+    this.roomNumber = hotelData.roomNumer;
     //BELOW is technically an empty array in the data set ??? 
-    this.roomServiceCharges = bookingData.roomServiceCharges;
-    this.number = roomData.number;
-    this.roomType = roomData.roomType;
+    this.roomServiceCharges = hotelData.roomServiceCharges;
+    this.number = hotelData.number;
+    this.roomType = hotelData.roomType;
     //SINCE below is a boolean, can I just assign it as such? DBL check on 
-    this.bidet = roomData.bidet;
-    this.bedSize = roomData.bedSize;
-    this.numBeds = roomData.numBeds
+    this.bidet = hotelData.bidet;
+    this.bedSize = hotelData.bedSize;
+    this.numBeds = hotelData.numBeds
     this.costPerNight = 0;
     this.currentCustomerBookings;
   }
-  // findCurrentCustomer() {
-  //   this.currentCustomerBookings = this.bookingData.filter((booking) => {
-  //     return 
-  //   })
-  // }
+  findCurrentCustomerBookings() {
+    this.currentCustomerBookings = this.bookings.filter((hotel) => {
+      return hotel.userID === this.customersData.id;
+    });
+  }
 }
 
 export default Hotel;
