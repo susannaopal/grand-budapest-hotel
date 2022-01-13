@@ -8,15 +8,19 @@
 body {
   font-family: 'Quicksand', sans-serif;
   color: $white-text;
-  background: $primary-background;
+  background: silver;
   margin: 0;
   display: flex;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 nav {
   background: black;
-  height: 30%;
+  // height: 30%;
+  // min-height: 50px;
+  height: 86px; 
   align-items: flex-end;
   flex-direction: row;
   text-align: center;
@@ -51,8 +55,7 @@ main {
 
 /* ~~~~~ Dashboard View ~~~~~ */
 
-.dashboard-view-section,
-.all-hotel-bookings {
+.dashboard-view-section{
   display: flex;
 }
 
@@ -71,17 +74,23 @@ main {
   margin-left: 15%;
   margin-right: 5%;
   width: 60%;
+  background-color: black;
+  opacity: .9;
+  border: solid red 2px;
 }
 
 .traveler-details {
   display: flex;
   flex-direction: column;
+  background-color: black;
+  opacity: .9;
 }
 
-.all-hotel-bookings {
+.all-hotel-bookings-section {
   display: flex;
   text-align: center;
   justify-content: flex-start;
+  border: solid red 2px;
 }
 
 .new-booking-section {
@@ -100,7 +109,7 @@ main {
 
 .traveler-details,
 // .user-login-section,
-.money-details,
+.welcome-customer-details,
 .past-bookings,
 .current-bookings,
 .filter-hotel-rooms,

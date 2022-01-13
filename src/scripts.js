@@ -10,6 +10,8 @@ import Customer from './classes/Customer';
 import domUpdates from './domUpdates';
 import { fetchAllCustomers, fetchSingleCustomer, fetchAllRooms, fetchAllBookings } from './apiCalls';
 import './images/hotel-img.png'
+import './images/hotel-background.png'
+
 
 //GLOBAL VARIABLES
 let hotel;
@@ -18,7 +20,8 @@ let customer;
 
 //FUNCTIONS
 function loadApiData() {
-  Promise.all([fetchSingleCustomer(48), fetchAllRooms(), fetchAllBookings()])
+//ASK ANNA: When calling fetchAllTravelers ---> it was breaking the promise, but if I hard code to call a single user, this works? Am I missing something? Do I not need to import all via promise?
+  Promise.all([fetchSingleCustomer(1), fetchAllRooms(), fetchAllBookings()])
     .then(data => {
       customer = new Customer(data[0]);
       hotel = new Hotel(data[0], data[1], data[2])
