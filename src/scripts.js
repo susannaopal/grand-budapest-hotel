@@ -18,13 +18,17 @@ let customer;
 
 //FUNCTIONS
 function loadApiData() {
-  Promise.all([fetchAllCustomers(), fetchSingleCustomer(48), fetchAllRooms(), fetchAllBookings()])
+  Promise.all([fetchSingleCustomer(48), fetchAllRooms(), fetchAllBookings()])
     .then(data => {
       customer = new Customer(data[0]);
       hotel = new Hotel(data[0], data[1], data[2])
-    })
+      loadCustomer(customer);
+    });
 }
 
+function loadCustomer(customer) {
+  domUpdates.greetCustomerByName(customer);
+}
 
 //EVENT LISTENERS 
 window.addEventListener('load', loadApiData);

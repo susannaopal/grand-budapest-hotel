@@ -1,5 +1,4 @@
 // FETCH CALLS
-
 export const fetchAllCustomers = () => {
   return fetch('http://localhost:3001/api/v1/customers')
     .then(response => response.json())
