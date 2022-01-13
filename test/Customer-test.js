@@ -1,4 +1,4 @@
-import { assert, expect } from "chai";
+import { expect } from "chai";
 import Customer from '../src/classes/Customer';
 
 
@@ -45,6 +45,10 @@ describe('Customer', () => {
 
   it('Should have a name', () => {
     expect(customer2.name).to.equal('');
+  });
+
+  it("should have a first name", () => {
+    expect(customer.getCustomerName()).to.equal('Leatha');
   });
 });
 
