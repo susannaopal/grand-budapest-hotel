@@ -1,61 +1,25 @@
 class Hotel {
-  constructor(bookingData, roomsData, customerData) {  
-    // this.bookingsData = bookingData;
-    // this.roomsData = roomsData;
-    // this.customersData = customerData;
-
+  constructor(roomData, bookingData, customerData) {  
+    this.roomsData = roomData;
+    this.bookingData = bookingData;
+    //AM I IMPORTING CUSTOMER CORRECTLY BELOW
+    this.customersData = customerData;
+    this.id = bookingData.id;
+    this.userID = bookingData.userID
+    this.roomType = bookingData.roomType;
+    this.date = bookingData.date;
+    this.roomNumber = bookingData.roomNumer;
+    //BELOW is technically an empty array in the data set ??? 
+    this.roomServiceCharges = bookingData.roomServiceCharges;
+    this.number = roomData.number;
+    this.roomType = roomData.roomType;
+    //SINCE below is a boolean, can I just assign it as such? DBL check on 
+    this.bidet = roomData.bidet;
+    this.bedSize = roomData.bedSize;
+    this.numBeds = roomData.numBeds
+    this.costPerNight = 0;
   }
 }
 
 export default Hotel;
 
-
-// rooms: [
-//     {
-//     number: 1,
-//     roomType: "residential suite",
-//     bidet: true,
-//     bedSize: "queen",
-//     numBeds: 1,
-//     costPerNight: 358.4
-//     },
-//     {
-//     number: 2,
-//     roomType: "suite",
-//     bidet: false,
-//     bedSize: "full",
-//     numBeds: 2,
-//     costPerNight: 477.38
-//     },
-//     {
-//     number: 3,
-//     roomType: "single room",
-//     bidet: false,
-//     bedSize: "king",
-//     numBeds: 1,
-//     costPerNight: 491.14
-//     },
-
-
-// bookings: [
-//     {
-//     id: "5fwrgu4i7k55hl6sz",
-//     userID: 9,
-//     date: "2020/04/22",
-//     roomNumber: 15,
-//     roomServiceCharges: [ ]
-//     },
-//     {
-//     id: "5fwrgu4i7k55hl6t5",
-//     userID: 43,
-//     date: "2020/01/24",
-//     roomNumber: 24,
-//     roomServiceCharges: [ ]
-//     },
-//     {
-//     id: "5fwrgu4i7k55hl6t6",
-//     userID: 13,
-//     date: "2020/01/10",
-//     roomNumber: 12,
-//     roomServiceCharges: [ ]
-//     },
