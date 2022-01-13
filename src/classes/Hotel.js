@@ -1,6 +1,8 @@
+import { LoaderTargetPlugin } from "webpack";
+
 class Hotel {
   constructor(roomData, bookingData, customerData) {  
-    this.roomsData = roomData;
+    this.roomData = roomData;
     this.bookingData = bookingData;
     //AM I IMPORTING CUSTOMER CORRECTLY BELOW
     this.customersData = customerData;
@@ -18,7 +20,13 @@ class Hotel {
     this.bedSize = roomData.bedSize;
     this.numBeds = roomData.numBeds
     this.costPerNight = 0;
+    this.currentCustomerBookings;
   }
+  // findCurrentCustomer() {
+  //   this.currentCustomerBookings = this.bookingData.filter((booking) => {
+  //     return 
+  //   })
+  // }
 }
 
 export default Hotel;
