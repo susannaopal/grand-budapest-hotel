@@ -7,15 +7,18 @@ const domUpdates = {
   
   displayCurrentCustomerBookings(currentCustomerBookings) {
     let bookingsSection = document.querySelector('.all-hotel-bookings');
+    bookingsSection.innerHTML = '';
     currentCustomerBookings.forEach((booking) => {
-      const bookingCard =
+      const newBookingCard =
       `<article class= 'book ${booking.id}>'
       <h3>Booking Details</h3>
       <p>Trip Date ${booking.date}</p>
-      <p>Room Number ${booking.roomNumber}</p>`
-      bookingsSection.innerHTML += bookingCard
+      <p>Room Number ${booking.roomNumber}</p>
+      </article>`;
+      bookingsSection.innerHTML += newBookingCard;
     })
   }
+
 };
     
 export default domUpdates;

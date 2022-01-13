@@ -1,5 +1,5 @@
 import { expect } from "chai";
-// import Customer from '../src/classes/Customer';
+import Customer from '../src/classes/Customer';
 import Hotel from '../src/classes/Hotel';
 
 
@@ -9,6 +9,7 @@ describe('Hotel', () => {
   let roomData;
   let bookingData;
   let hotel;
+  let customerData;
 
 
   beforeEach(function() {
@@ -58,7 +59,7 @@ describe('Hotel', () => {
       'costPerNight': 491.14
     };
 
-    hotel = new Hotel(roomData, bookingData)
+    hotel = new Hotel(roomData, bookingData, customerData)
   });
   
 

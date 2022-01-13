@@ -3,7 +3,7 @@ import Customer from '../src/classes/Customer';
 
 
 describe('Customer', () => {
-  // let customerData;
+  let customerData;
   let customer;
   let customer2;
   let customer3;
