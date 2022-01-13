@@ -4,28 +4,28 @@ export const fetchAllCustomers = () => {
   return fetch('http://localhost:3001/api/v1/customers')
     .then(response => response.json())
     .then(data => data.customers)
-    .catch(error => console.log('Houston, we have a problem!'))
+    .catch(error => console.log(error))
 };
 
 export const fetchSingleCustomer = (id) => {
   return fetch(`http://localhost:3001/api/v1/customers/${id}`)
     .then(response => response.json())
     .then(data => data)
-    .error(error => console.log('Houston, we have a problem!'))
+    .catch(error => console.log(error))
 };
 
-export const fetchHotelRooms = () => {
+export const fetchAllRooms = () => {
   return fetch('http://localhost:3001/api/v1/rooms')
     .then(response => response.json())
     .then(data => data.rooms)
-    .catch(error => console.log('Houston, we have a problem!'))
+    .catch(error => console.log(error))
 };
 
 export const fetchAllBookings = () => {
   return fetch('http://localhost:3001/api/v1/bookings')
     .then(response => response.json())
     .then(data => data.bookings)
-    .catch(error => console.log('Houston, we have a problem!'))
+    .catch(error => console.log(error))
 };
 
 
