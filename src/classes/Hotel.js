@@ -15,12 +15,8 @@ class Hotel {
     this.userID = bookingData.userID
     this.date = bookingData.date;
     this.roomNumber = bookingData.roomNumer;
-    // this.roomServiceCharges = [];
     this.number = roomData.number;
     this.roomType = roomData.roomType;
-    // this.bidet = roomData.bidet;
-    // this.bedSize = roomData.bedSize;
-    // this.numBeds = roomData.numBeds;
     this.costPerNight = 0;
     this.currentCustomerBookings;
   }
@@ -35,16 +31,15 @@ class Hotel {
   }
 
   findTotalSpentOnRooms() {
-    // console.log("are you being called?")
-    this.findCurrentCustomerBookings()
+    this.findCurrentCustomerBookings();
     let totalSpent = this.currentCustomerBookings.reduce((acc, booking) => {
       let hotelRoom = this.rooms.find((room) => {
-        return room.number === booking.roomNumber
-      })
-      acc += hotelRoom.costPerNight
-     return acc
+        return room.number === booking.roomNumber;
+      });
+      acc += hotelRoom.costPerNight;
+      return acc;
     }, 0)
-    return totalSpent
+    return totalSpent;
   }
 }
 
