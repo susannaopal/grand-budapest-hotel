@@ -1,9 +1,6 @@
 import { expect } from "chai";
 import Hotel from '../src/classes/Hotel';
 
-
-//NEED TO RETURN TO FIGURE OUT SAD PATH TESTING!!!
-
 describe('Hotel', () => {
   let hotel;
   let roomData;
@@ -56,12 +53,12 @@ describe('Hotel', () => {
       'costPerNight': 477.38
     },
     {
-      'number': 3,
+      'number': 15,
       'roomType': "single room",
       'bidet': false,
       'bedSize': "king",
       'numBeds': 1,
-      'costPerNight': 491.14
+      'costPerNight': 491
     };
 
     hotel = new Hotel(currentCustomerData, bookingData, roomData);
@@ -121,8 +118,18 @@ describe('Hotel', () => {
     expect(roomData.numBeds).to.equal(1);
   });
 
-  //BELOW is failing, does it need to be tested?
-//   it('should have a cost per room', function() {
-//     expect(hotel.costPerNight).to.equal(358.4);
-//   });
+  //BELOW IS FAILING, WHY?! Showing line 26 on the hotel class
+//FAILURE MESSAGE:   1) Hotel
+    //   should calculate total cost per customer booking:
+    //  TypeError: this.bookings.filter is not a function
+    //   at Hotel.findCurrentCustomerBookings (dist/webpack:/webpack-starter-kit/src/classes/Hotel.js:26:1)
+    //   at Context.<anonymous> (dist/webpack:/webpack-starter-kit/test/Hotel-test.js:123:1)
+
+
+  it('should calculate total cost per customer bookings', function() {
+    hotel.findCurrentCustomerBookings(9)
+    hotel.findTotalSpentOnRooms()
+    expect(hotel.findTotalSpentOnRooms()).to.equal(491);
+  });
 });
+
