@@ -4,6 +4,9 @@
 @import './_mixins';
 
 //overflow-y: auto;
+html {
+  height: 100%;
+}
 
 body {
   font-family: 'Quicksand', sans-serif;
@@ -12,8 +15,8 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 }
 
 nav {
@@ -28,8 +31,8 @@ nav {
 
 .logout {
   display: flex;
-  border: blueviolet 2px dotted;
-  
+  justify-content: flex-end;
+
 }
 
 
@@ -75,25 +78,63 @@ main {
   justify-content: flex-start;
 }
 
+.first-name,
+.money-spent {
+text-align: center;
+}
+
+.bookings-div {
+  border: 2px purple solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0;
+  margin-left: 8%;
+  margin-top: -6%
+}
+
+.booking-title {
+  border: 2px solid white;
+  background-color: black;
+
+}
+
 .all-hotel-bookings {
   display: flex;
   align-items: flex-end;
   flex-direction: row;
   margin-left: 15%;
   margin-right: 5%;
-  width: 60%;
+  width: 100%;
   background-color: black;
-  // opacity: .9;
-  border: solid red 2px;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2% auto;
+}
+
+.bookings-card {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-auto-rows: minmax(200px, auto);
+  justify-content: center;
+  margin-top: 2%;
+  // border: dotted white 1px;
+  margin-left: 2%;
+  // overflow-y: auto;
+}
+
+.newBookingCard{
+  border: dotted white 1px;
 }
 
 .traveler-details {
   display: flex;
   flex-direction: column;
   background-color: black;
-  margin-left: 1.5%;
-  // overflow-y: auto;
-  // opacity: .9;
+  margin-left: 5.5%;
+  margin-bottom: 80%;
 }
 
 .all-hotel-bookings-section {
@@ -104,8 +145,8 @@ main {
 }
 
 .new-booking-section {
-  border: 2px dotted red;
-  margin-top: 40%;
+ margin-top: 5%;
+ text-align: center;
 }
 
 .past-stays,

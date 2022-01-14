@@ -10,7 +10,7 @@ const domUpdates = {
   },
   
   displayCurrentCustomerBookings(currentCustomerBookings) {
-    let bookingsSection = document.querySelector('.all-hotel-bookings');
+    let bookingsSection = document.querySelector('.bookings-card');
     bookingsSection.innerHTML = '';
     currentCustomerBookings.forEach((booking) => {
       const newBookingCard =
@@ -25,7 +25,7 @@ const domUpdates = {
 
   displayTotalSpent(hotel) {
     let amount = hotel.findTotalSpentOnRooms()
-    let totalMoneySpent = document.querySelector('#money-spent')
+    let totalMoneySpent = document.querySelector('.money-spent')
     totalMoneySpent.innerText += `💵 You have spent $${amount} 💵`
   },
 

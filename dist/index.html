@@ -16,14 +16,14 @@
     <!-- <img class="key-img" src="./images/keys-icon.png" alt="antique key"> -->
   <nav>
     <h1>~Welcome to the Grand Budapest Hotel~</h1>
-    <!-- <div class="logout"> -->
+    <div class="logout">
       <button class="logout-btn">Logout</button>
-    <!-- </div> -->
+    </div>
 
   </nav>
   <main>      
   <section class="user-login-section hidden">
-    <img class="budapest-hotel-img" src="./images/hotel-img.png" alt="hotel photograph">
+    <!-- <img class="budapest-hotel-img" src="./images/hotel-img.png" alt="hotel photograph"> -->
     <div class="login-form">
       <p>👇 Please login to access your hotel reservations: 👇</p>
       <form class="container">
@@ -35,126 +35,47 @@
       </form>
     </div>
   </section>
-  <section class="dashboard-view-section">
+
+  <section class="dashboard-view-section ">
     <aside class="traveler-details">
       <div class= "welcome-customer-details">
-        <h2 id="firstName">Welcome!</h2>
-        <p id="money-spent"><p/>
+        <h2 class="first-name" id="firstName">Welcome!</h2>
+        <p class="money-spent"><p/>
       </div>
       <div class="new-booking-section">
-        <p class="click-new">📆 To make a new booking: 
-        <button class="make-booking-btn">Click here</button> 🗓
+        <p class="click-new">🗓 Make a new booking: 
+        <!-- <button class="make-booking-btn">Click here</button> 🗓 -->
       </div>
-    </aside>      
-    <section class="all-hotel-bookings">
-      <!-- <h3>Customer Bookings</h3> -->
-      <div class="past-stays">
-        <!-- <h3 class="past-bookings">🗓 Previous Bookings 📆 </h3> -->
-        <article class="EXAMPLE1">
-          <!-- <div class="card-top1">
-            <img class="white-arrow-icon" src="assets/white-arrow.png" alt="arrow clipart">
-            <p class="views">VIEWS</p>
-            <p class="zero-2">02</p>
-          </div>
-          <div>
-            <h4 class="recipient-name">Stanley Hudson</h4>
-            <p class ="date">Monday 01/23/16 10:22am</p>
-            <p class="playlist">PLAYLIST</p>
-            <h3 class="playlist-name">Name of Playlist</h3>
-            <p class="attachments">ATTACHMENTS</p>
-            <h1 class ="zero-4">04</h1>
-          </div> -->
-      </article>
-      </div>
-      <div class="current-stays">
-        <!-- <h3 class="current-bookings">🗓 Current & Upcoming Bookings 📆 </h3> -->
-        <article class="EXAMPLE2">
-          <!-- <div class="card-top1">
-            <img class="white-arrow-icon" src="assets/white-arrow.png" alt="arrow clipart">
-            <p class="views">VIEWS</p>
-            <p class="zero-2">02</p>
-          </div>
-          <div>
-            <h4 class="recipient-name">Stanley Hudson</h4>
-            <p class ="date">Monday 01/23/16 10:22am</p>
-            <p class="playlist">PLAYLIST</p>
-            <h3 class="playlist-name">Name of Playlist</h3>
-            <p class="attachments">ATTACHMENTS</p>
-            <h1 class ="zero-4">04</h1>
-          </div> -->
-      </article>
-      </div>
-  </section>
-  <!-- <section class="search-field-container">
-    <section class="search-container hidden">
-      <label class="room-filter-label">Filter By Room Type</label>
-      <select id="room-type-search" class="room-type-input" type="dropdown">
-        <option value="All">All</option>
-        <option value="suite">Suite</option>
-        <option value="residential-suite">Residential Suite</option>
-        <option value="junior-suite">Junior Suite</option>
-        <option value="single-room">Single</option>
-      <select/>  
-      <button class="room-type-search-button search-button">Search</button>
-    </section>
-    <section class="search-container hidden">
-      <label class="date-filter-label">Select A Date</label>
-      <input class="date-filter-input" placeholder="YYYY/MM/DD">
-      <button class="date-filter-button search">Search</button>
-    </section> -->
-
-</section>
-  <aside class= "filter-rooms-aside hidden">
-    <section class ="reservations-form">
-      <!-- <menu class ="menu-buttons">  -->
-      <section class="new-reservations-section">
-      <!-- <button class="reserve-button " id="reserve-button">New Reservation</button> -->
-      <div class="date-selection">
-        <form class="dropdown">
-          <h3>📆 Select Your Dates 🗓</h3>
-          <label class="arrival-date" for="trip-start">Arrival Date</label>
-          <input type="date" id="arrival" name="trip-start" min="today" max="2022-12-31">
-            <!-- <p class="date-error-arrival hidden">Please select an arrival date</p> -->
-          <label class ="departure-date" for="trip-end">Departure Date</label>
-          <input type="date" id="departure" name="trip-end" min="today" max="2022-12-31">
-          <!-- <p class="date-error-departure hidden">Please select a departure date</p> -->
-          <section class="select-by-room-type">
-            <p> 🛏  Make a room selection: 🛏 </p>
-            <label for="room-type">Room Type</label>
-            <select class="choose-room-button" label="filter-by-" id="hotel-room-type">
-              <option value="single room">Single Room</option>
-              <option value="junior suite">Junior Suite</option>
-              <option value="suite">Suite</option>
-              <option value="residential suite">Residential Suite</option>
-            </select>
-            <button class="availability-button" id="check-availability-button" type="submit">Check Room Availablity</>
-              </button>
-        </form> 
+      <section class="search-field-container">
+        <section class="search-container ">
+          <section class="search-container ">
+            <!-- <label class="date-filter-label">Select A Date</label>
+            <input class="date-filter-input" placeholder="YYYY/MM/DD">
+            <button class="date-filter-button search">Search</button> -->
+            <label class="select-date-label" for="date">Select a Date:</label>
+        <input class="available-rooms-input" type="date" id="date" name="date">
+          </section>
+          <label class="room-type-label">🛏  Select a Room</label>
+          <select id="room-type-search" class="room-type-input" type="dropdown">
+            <!-- <option value="All">All</option> -->
+            <option value="suite">Suite</option>
+            <option value="residential-suite">Residential Suite</option>
+            <option value="junior-suite">Junior Suite</option>
+            <option value="single-room">Single</option>
+          <select/>  
+          <button class="room-type-search-button search-button">Search</button>
+        </section>
+    </aside>  
+    
+    <div class="bookings-div">
+        <div class="booking-title">
+        <h3>Customer Bookings</h3>
         </div>
+      <section class="all-hotel-bookings">
+        <section class="bookings-card">
+        </section>
       </section>
-      
-    <!-- </menu> -->
-  </aside>
-  <!-- <section class= "room-grid hidden">
-    <p class="avail-rooms">AVAILABLE ROOMS</p> -->
-    <!-- inner html for rooms available here/BELOW TO BE DELETED JUST EX -->
-    <!-- <article class="card-1">
-      <div class="card-top1">
-        <img class="white-arrow-icon" src="assets/white-arrow.png" alt="arrow clipart">
-        <p class="views">VIEWS</p>
-        <p class="zero-2">02</p>
-      </div>
-      <div>
-        <h4 class="recipient-name">Stanley Hudson</h4>
-        <p class ="date">Monday 01/23/16 10:22am</p>
-        <p class="web-address">http://2win.2winstage.com/p/recipients_namehere</p>
-        <p class="playlist">PLAYLIST</p>
-        <h3 class="playlist-name">Name of Playlist</h3>
-        <p class="attachments">ATTACHMENTS</p>
-        <h1 class ="zero-4">04</h1>
-      </div> -->
-  <!-- </article>
-  </section> -->
+    </div>
 </main>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>

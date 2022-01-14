@@ -25,7 +25,7 @@ let customer;
 function loadApiData() {
   //skipping over allcustomers for now
 //ASK ANNA: When calling fetchAllTravelers ---> it was breaking the promise, but if I hard code to call a single user, this works? Am I missing something? Do I not need to import all via promise?
-  Promise.all([fetchSingleCustomer(12), fetchAllCustomers(), fetchAllRooms(), fetchAllBookings()])
+  Promise.all([fetchSingleCustomer(1), fetchAllCustomers(), fetchAllRooms(), fetchAllBookings()])
     .then(data => {
       customer = new Customer(data[0]);
       hotel = new Hotel(data[0], data[2], data[3]);
