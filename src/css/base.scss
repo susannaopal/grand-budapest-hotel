@@ -78,6 +78,11 @@ main {
   justify-content: flex-start;
 }
 
+.first-name,
+.money-spent {
+text-align: center;
+}
+
 .bookings-div {
   border: 2px purple solid;
   display: flex;
@@ -85,10 +90,11 @@ main {
   align-items: center;
   border: 0;
   margin-left: 8%;
+  margin-top: -6%
 }
 
 .booking-title {
-  border: 2px dotted silver;
+  border: 2px solid white;
   background-color: black;
 
 }
@@ -101,7 +107,7 @@ main {
   margin-right: 5%;
   width: 100%;
   background-color: black;
-  border: 2px dotted silver;
+  border: 2px solid white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -120,8 +126,7 @@ main {
 }
 
 .newBookingCard{
-    border: dotted white 1px;
-
+  border: dotted white 1px;
 }
 
 .traveler-details {
@@ -129,8 +134,7 @@ main {
   flex-direction: column;
   background-color: black;
   margin-left: 5.5%;
-  // overflow-y: auto;
-  // opacity: .9;
+  margin-bottom: 80%;
 }
 
 .all-hotel-bookings-section {
@@ -141,8 +145,8 @@ main {
 }
 
 .new-booking-section {
-  border: 2px dotted red;
-  margin-top: 40%;
+ margin-top: 5%;
+ text-align: center;
 }
 
 .past-stays,
