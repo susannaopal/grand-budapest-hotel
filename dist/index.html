@@ -16,8 +16,12 @@
     <!-- <img class="key-img" src="./images/keys-icon.png" alt="antique key"> -->
   <nav>
     <h1>~Welcome to the Grand Budapest Hotel~</h1>
+    <!-- <div class="logout"> -->
+      <button class="logout-btn">Logout</button>
+    <!-- </div> -->
+
   </nav>
-  <main>
+  <main>      
   <section class="user-login-section hidden">
     <img class="budapest-hotel-img" src="./images/hotel-img.png" alt="hotel photograph">
     <div class="login-form">
@@ -35,18 +39,19 @@
     <aside class="traveler-details">
       <div class= "welcome-customer-details">
         <h2 id="firstName">Welcome!</h2>
-        <!-- <h2 class="money-spent">💵 Hi Person, YOU HAVE SPENT THIS MUCH $$$ ON TRAVEL 💵</h2> -->
+        <p id="money-spent"><p/>
       </div>
       <div class="new-booking-section">
         <p class="click-new">📆 To make a new booking: 
         <button class="make-booking-btn">Click here</button> 🗓
       </div>
-    </aside>
+    </aside>      
     <section class="all-hotel-bookings">
+      <!-- <h3>Customer Bookings</h3> -->
       <div class="past-stays">
-        <h3 class="past-bookings">🗓 Previous Bookings 📆 </h3>
+        <!-- <h3 class="past-bookings">🗓 Previous Bookings 📆 </h3> -->
         <article class="EXAMPLE1">
-          <div class="card-top1">
+          <!-- <div class="card-top1">
             <img class="white-arrow-icon" src="assets/white-arrow.png" alt="arrow clipart">
             <p class="views">VIEWS</p>
             <p class="zero-2">02</p>
@@ -58,13 +63,13 @@
             <h3 class="playlist-name">Name of Playlist</h3>
             <p class="attachments">ATTACHMENTS</p>
             <h1 class ="zero-4">04</h1>
-          </div>
+          </div> -->
       </article>
       </div>
       <div class="current-stays">
-        <h3 class="current-bookings">🗓 Current & Upcoming Bookings 📆 </h3>
+        <!-- <h3 class="current-bookings">🗓 Current & Upcoming Bookings 📆 </h3> -->
         <article class="EXAMPLE2">
-          <div class="card-top1">
+          <!-- <div class="card-top1">
             <img class="white-arrow-icon" src="assets/white-arrow.png" alt="arrow clipart">
             <p class="views">VIEWS</p>
             <p class="zero-2">02</p>
@@ -76,10 +81,28 @@
             <h3 class="playlist-name">Name of Playlist</h3>
             <p class="attachments">ATTACHMENTS</p>
             <h1 class ="zero-4">04</h1>
-          </div>
+          </div> -->
       </article>
       </div>
   </section>
+  <!-- <section class="search-field-container">
+    <section class="search-container hidden">
+      <label class="room-filter-label">Filter By Room Type</label>
+      <select id="room-type-search" class="room-type-input" type="dropdown">
+        <option value="All">All</option>
+        <option value="suite">Suite</option>
+        <option value="residential-suite">Residential Suite</option>
+        <option value="junior-suite">Junior Suite</option>
+        <option value="single-room">Single</option>
+      <select/>  
+      <button class="room-type-search-button search-button">Search</button>
+    </section>
+    <section class="search-container hidden">
+      <label class="date-filter-label">Select A Date</label>
+      <input class="date-filter-input" placeholder="YYYY/MM/DD">
+      <button class="date-filter-button search">Search</button>
+    </section> -->
+
 </section>
   <aside class= "filter-rooms-aside hidden">
     <section class ="reservations-form">
@@ -109,6 +132,7 @@
         </form> 
         </div>
       </section>
+      
     <!-- </menu> -->
   </aside>
   <!-- <section class= "room-grid hidden">

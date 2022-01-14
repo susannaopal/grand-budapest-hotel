@@ -1,61 +1,47 @@
-class Hotel {
-  constructor(bookingData, roomsData, customerData) {  
-    // this.bookingsData = bookingData;
-    // this.roomsData = roomsData;
-    // this.customersData = customerData;
+/* eslint-disable max-len */
 
+import Customer from "./Customer"
+
+class Hotel {
+
+  //NEED TO FIX THE CONSTRUCTOR FOR STUFF THAT IS 
+  // ROOM OR BOOKING DATA BASED ON HOW IT IS BEING IMPORTED VIA THE FETCH CALLS (0-customerData, 2-roomData, 3-bookingData)
+  constructor(currentCustomerData, roomData, bookingData) {  
+    // this.hotels = hotelData;
+    this.rooms = roomData;
+    this.bookings = bookingData;
+    this.currentCustomer = currentCustomerData;
+    this.id = bookingData.id;
+    this.userID = bookingData.userID
+    this.date = bookingData.date;
+    this.roomNumber = bookingData.roomNumer;
+    this.number = roomData.number;
+    this.roomType = roomData.roomType;
+    this.costPerNight = 0;
+    this.currentCustomerBookings;
+  }
+
+  findCurrentCustomerBookings() {
+    //SORT BY DATE AND DAYJS write a helper function
+    let filteredBookings = this.bookings.filter((booking) => {
+      return booking.userID === this.currentCustomer.id;
+    });
+    //sorrt below by date using .sort and dayjs
+    this.currentCustomerBookings = filteredBookings;
+  }
+
+  findTotalSpentOnRooms() {
+    this.findCurrentCustomerBookings();
+    let totalSpent = this.currentCustomerBookings.reduce((acc, booking) => {
+      let hotelRoom = this.rooms.find((room) => {
+        return room.number === booking.roomNumber;
+      });
+      acc += hotelRoom.costPerNight;
+      return acc;
+    }, 0)
+    return totalSpent;
   }
 }
 
 export default Hotel;
 
-
-// rooms: [
-//     {
-//     number: 1,
-//     roomType: "residential suite",
-//     bidet: true,
-//     bedSize: "queen",
-//     numBeds: 1,
-//     costPerNight: 358.4
-//     },
-//     {
-//     number: 2,
-//     roomType: "suite",
-//     bidet: false,
-//     bedSize: "full",
-//     numBeds: 2,
-//     costPerNight: 477.38
-//     },
-//     {
-//     number: 3,
-//     roomType: "single room",
-//     bidet: false,
-//     bedSize: "king",
-//     numBeds: 1,
-//     costPerNight: 491.14
-//     },
-
-
-// bookings: [
-//     {
-//     id: "5fwrgu4i7k55hl6sz",
-//     userID: 9,
-//     date: "2020/04/22",
-//     roomNumber: 15,
-//     roomServiceCharges: [ ]
-//     },
-//     {
-//     id: "5fwrgu4i7k55hl6t5",
-//     userID: 43,
-//     date: "2020/01/24",
-//     roomNumber: 24,
-//     roomServiceCharges: [ ]
-//     },
-//     {
-//     id: "5fwrgu4i7k55hl6t6",
-//     userID: 13,
-//     date: "2020/01/10",
-//     roomNumber: 12,
-//     roomServiceCharges: [ ]
-//     },

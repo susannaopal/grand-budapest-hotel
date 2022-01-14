@@ -3,6 +3,7 @@ import Customer from '../src/classes/Customer';
 
 
 describe('Customer', () => {
+  // let customerData;
   let customer;
   let customer2;
   let customer3;
@@ -21,13 +22,14 @@ describe('Customer', () => {
       'id': '',
       'name': 'Kelvin Schiller'
     });
+
   });
     
   it('Should be a function', () => {
     expect(Customer).to.be.a('function');
   });
     
-  it('Should be an instance of customer', () => {
+  it('Should be an instance of Customer', () => {
     expect(customer).to.be.an.instanceOf(Customer);
   });
     
