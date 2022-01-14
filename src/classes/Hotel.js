@@ -1,7 +1,5 @@
 /* eslint-disable max-len */
 
-import Customer from "./Customer"
-
 class Hotel {
 
   //NEED TO FIX THE CONSTRUCTOR FOR STUFF THAT IS 
