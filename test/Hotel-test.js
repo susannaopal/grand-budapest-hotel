@@ -16,7 +16,7 @@ describe('Hotel', () => {
       id: 9,
       name: 'Joe Bob',
     };
-    roomData = {
+    roomData = [{
       'number': 1,
       'roomType': "residential suite",
       'bidet': true,
@@ -39,8 +39,8 @@ describe('Hotel', () => {
       'bedSize': "king",
       'numBeds': 1,
       'costPerNight': 491
-    };
-    bookingData = {
+    }];
+    bookingData = [{
       'id': "5fwrgu4i7k55hl6sz",
       'userID': 9,
       'date': "2020/04/22",
@@ -60,7 +60,7 @@ describe('Hotel', () => {
       'date': "2020/01/10",
       'roomNumber': 12,
       'roomServiceCharges': [ ]
-    };
+    }];
 
     hotel = new Hotel(currentCustomerData, roomData, bookingData);
 //params have to be in order of the class constructor
@@ -76,57 +76,34 @@ describe('Hotel', () => {
     expect(hotel).to.be.an.instanceOf(Hotel);
   });
 
-  it('should have a booking ID', function() {
-    expect(bookingData.id).to.equal('5fwrgu4i7k55hl6sz');
+  it('Should have a rooms property', () => {
+    expect(hotel.rooms).to.be.equal(roomData)
   });
 
-  it('should have a booking UserID', function() {
-    expect(bookingData.userID).to.equal(9);
+  it('Should have an array of bookings', () => {
+    expect(hotel.bookings).to.be.deep.equal(bookingData)
   });
 
-  it('should have a booking date', function() {
-    expect(bookingData.date).to.equal("2020/04/22");
+  it('Should have a customer property', () => {
+    expect(hotel.currentCustomer).to.be.deep.equal(currentCustomerData)
   });
 
-  it('should have room service charges', function() {
-    expect(bookingData.roomServiceCharges).to.deep.equal([]);
+  it('Should find current customer booking', () => {
+    expect(hotel.currentCustomerBookings).to.be.equal(undefined)
+    hotel.findCurrentCustomerBookings()
+    expect(hotel.currentCustomerBookings).to.deep.equal([{
+      'id': "5fwrgu4i7k55hl6sz",
+      'userID': 9,
+      'date': "2020/04/22",
+      'roomNumber': 15,
+      'roomServiceCharges': [ ]
+    }])
   });
-
-  it('should have a number', function() {
-    expect(roomData.number).to.equal(1);
-  });
-
-  it('should have a room type', function() {
-    expect(roomData.roomType).to.equal('residential suite');
-  });
-
-  it('should have a bidet', function() {
-    expect(roomData.bidet).to.equal(true);
-  });
-
-  it('should have a bed size', function() {
-    expect(roomData.bedSize).to.equal('queen');
-  });
-
-  it('should have a bed number per room', function() {
-    expect(roomData.numBeds).to.equal(1);
-  });
-
-//TEST IS BROKEN, but wtf???
-//error: 1) Hotel
-      //  should calculate total cost per customer bookings:
-      //  TypeError: this.bookings.filter is not a function
-      //   at Hotel.findCurrentCustomerBookings (dist/webpack:/webpack-starter-kit/src/classes/Hotel.js:26:1)
-      //   at Hotel.findTotalSpentOnRooms (dist/webpack:/webpack-starter-kit/src/classes/Hotel.js:34:1)
-      //   at Context.<anonymous> (dist/webpack:/webpack-starter-kit/test/Hotel-test.js:119:11)
   
-  
-
-
-  // it('should calculate total cost per customer bookings', function() {
-    // hotel.findCurrentCustomerBookings(9)
-    // hotel.findTotalSpentOnRooms()
-  //   expect(hotel.findTotalSpentOnRooms()).to.equal(491);
-  // });
+  it('should calculate total cost per customer bookings', function() {
+    hotel.findCurrentCustomerBookings(9)
+    hotel.findTotalSpentOnRooms()
+    expect(hotel.findTotalSpentOnRooms()).to.equal('491');
+  });
 });
 

@@ -4,6 +4,18 @@ import Hotel from "./classes/Hotel";
 
 const domUpdates = {
 
+  hide(...views) {
+    views.forEach(view => {
+      view.classList.add("hidden")
+    })
+  },
+  
+  show(...views) {
+    views.forEach(view=> {
+    view.classList.remove("hidden");
+    })
+  },
+
   greetCustomerByName(customer) {
     let greetCustomer = document.querySelector('#firstName');
     greetCustomer.innerText = `Welcome, ${customer.getCustomerName()}!`;
