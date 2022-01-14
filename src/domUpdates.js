@@ -27,7 +27,6 @@ const domUpdates = {
     let amount = hotel.findTotalSpentOnRooms()
     let totalMoneySpent = document.querySelector('#money-spent')
     totalMoneySpent.innerText += `💵 You have spent $${amount} 💵`
-    
   },
 
 };
