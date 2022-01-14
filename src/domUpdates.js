@@ -10,7 +10,7 @@ const domUpdates = {
   },
   
   displayCurrentCustomerBookings(currentCustomerBookings) {
-    let bookingsSection = document.querySelector('.all-hotel-bookings');
+    let bookingsSection = document.querySelector('.bookings-card');
     bookingsSection.innerHTML = '';
     currentCustomerBookings.forEach((booking) => {
       const newBookingCard =
