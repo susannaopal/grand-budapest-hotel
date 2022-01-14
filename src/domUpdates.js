@@ -23,12 +23,13 @@ const domUpdates = {
     })
   },
 
-  // displayTotalSpent(hotel) {
-  //   hotel.findTotalSpentOnRooms()
-  //     let totalMoneySpent = document.querySelector('.money-spent')
-  //     totalMoneySpent.innerText += `💵 You have spent ${hotel.costPerNight}!💵`
+  displayTotalSpent(hotel) {
+    let amount = hotel.findTotalSpentOnRooms()
+      let totalMoneySpent = document.querySelector('#money-spent')
+      console.log(totalMoneySpent)
+      totalMoneySpent.innerText += `💵 You have spent ${amount}!💵`
     
-  // },
+  },
 
 };
     

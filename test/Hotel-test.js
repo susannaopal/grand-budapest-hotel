@@ -8,10 +8,16 @@ describe('Hotel', () => {
   let hotel;
   let roomData;
   let bookingData;
+  let currentCustomerData;
 
 
   beforeEach(function() {
-    
+   
+    currentCustomerData = {
+      id: 9,
+      name: 'Joe Bob',
+    };
+
     bookingData = {
       'id': "5fwrgu4i7k55hl6sz",
       'userID': 9,
@@ -58,8 +64,8 @@ describe('Hotel', () => {
       'costPerNight': 491.14
     };
 
-    hotel = new Hotel([bookingData, roomData]);
-
+    hotel = new Hotel(currentCustomerData, bookingData, roomData);
+//params have to be in order of the class constructor
 
   });
   

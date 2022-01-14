@@ -15,12 +15,12 @@ class Hotel {
     this.userID = bookingData.userID
     this.date = bookingData.date;
     this.roomNumber = bookingData.roomNumer;
-    this.roomServiceCharges = [];
+    // this.roomServiceCharges = [];
     this.number = roomData.number;
     this.roomType = roomData.roomType;
-    this.bidet = roomData.bidet;
-    this.bedSize = roomData.bedSize;
-    this.numBeds = roomData.numBeds;
+    // this.bidet = roomData.bidet;
+    // this.bedSize = roomData.bedSize;
+    // this.numBeds = roomData.numBeds;
     this.costPerNight = 0;
     this.currentCustomerBookings;
   }
@@ -34,18 +34,18 @@ class Hotel {
     this.currentCustomerBookings = filteredBookings;
   }
 
-  //FUNCTION KEEPS BREAKING RE-DO AND ASK KATIE ABOUT 
-  // findTotalSpentOnRooms() {
-  //   let totalAmtSpent = this.bookings((acc, booking) => {
-    //need to match the customer id to the current bookings id and the room id
-    //above that functionality has the bookings already sorted to match
-    // the bookingID to the current customer id
-    //SO this functionality needs to take the bookings and * by room?
-      
-
-  // })
-  
-      
+  findTotalSpentOnRooms() {
+    // console.log("are you being called?")
+    this.findCurrentCustomerBookings()
+    let totalSpent = this.currentCustomerBookings.reduce((acc, booking) => {
+      let hotelRoom = this.rooms.find((room) => {
+        return room.number === booking.roomNumber
+      })
+      acc += hotelRoom.costPerNight
+     return acc
+    }, 0)
+    return totalSpent
+  }
 }
 
 export default Hotel;

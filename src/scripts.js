@@ -42,7 +42,7 @@ function loadCustomer(customer) {
   // hotel.findTotalSpentOnRooms()
   // console.log(hotel.currentCustomerBookings)
   domUpdates.displayCurrentCustomerBookings(hotel.currentCustomerBookings);
-  // domUpdates.displayTotalSpent(hotel.currentCustomerBookings)
+  domUpdates.displayTotalSpent(hotel)
 }
 
 //EVENT LISTENERS 
