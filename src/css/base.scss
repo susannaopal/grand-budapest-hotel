@@ -26,6 +26,14 @@ nav {
   text-align: center;
 }
 
+.logout {
+  border: blueviolet 2px dotted;
+  
+  
+}
+
+
+
 main {
   display: flex;
 }
@@ -75,7 +83,7 @@ main {
   margin-right: 5%;
   width: 60%;
   background-color: black;
-  opacity: .9;
+  // opacity: .9;
   border: solid red 2px;
 }
 
@@ -83,7 +91,8 @@ main {
   display: flex;
   flex-direction: column;
   background-color: black;
-  opacity: .9;
+  overflow-y: auto;
+  // opacity: .9;
 }
 
 .all-hotel-bookings-section {
@@ -119,6 +128,15 @@ main {
   // background: $section-color;
 }
 
+.make-booking-btn 
+{
+  text-align: center;
+  display: flex;
+  padding: 15px 32px;
+  margin: 10px 10px 10px 10px;
+  border-radius: 3%;
+  box-shadow: 4px 3px 5px #073034;
+}
 
 // /* ~~~~~ Log-in Page ~~~~~ */
 // .budapest-hotel-img {

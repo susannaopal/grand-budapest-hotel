@@ -1,5 +1,9 @@
+import Customer from "./Customer"
 
 class Hotel {
+
+  //NEED TO FIX THE CONSTRUCTOR FOR STUFF THAT IS 
+  // ROOM OR BOOKING DATA BASED ON HOW IT IS BEING IMPORTED VIA THE FETCH CALLS (0-customerData, 2-roomData, 3-bookingData)
   constructor(currentCustomerData, roomData, bookingData) {  
     // this.hotels = hotelData;
     this.rooms = roomData;
