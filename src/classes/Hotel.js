@@ -39,7 +39,7 @@ class Hotel {
       acc += hotelRoom.costPerNight;
       return acc;
     }, 0)
-    return totalSpent.toFixed()
+    return totalSpent.toFixed();
   }
 }
 
