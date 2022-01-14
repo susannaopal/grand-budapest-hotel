@@ -1,3 +1,7 @@
+/* eslint-disable max-len */
+
+import Hotel from "./classes/Hotel";
+
 const domUpdates = {
 
   greetCustomerByName(customer) {
@@ -17,7 +21,14 @@ const domUpdates = {
       </article>`;
       bookingsSection.innerHTML += newBookingCard;
     })
-  }
+  },
+
+  // displayTotalSpent(hotel) {
+  //   hotel.findTotalSpentOnRooms()
+  //     let totalMoneySpent = document.querySelector('.money-spent')
+  //     totalMoneySpent.innerText += `💵 You have spent ${hotel.costPerNight}!💵`
+    
+  // },
 
 };
     

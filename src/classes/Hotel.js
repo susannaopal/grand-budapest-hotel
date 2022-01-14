@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 import Customer from "./Customer"
 
 class Hotel {
@@ -8,24 +10,21 @@ class Hotel {
     // this.hotels = hotelData;
     this.rooms = roomData;
     this.bookings = bookingData;
-    //AM I IMPORTING CUSTOMER CORRECTLY BELOW
     this.currentCustomer = currentCustomerData;
-    // this.id = hotelData.id;
-    // this.userID = hotelData.userID
-    // this.roomType = hotelData.roomType;
-    // this.date = hotelData.date;
-    // this.roomNumber = hotelData.roomNumer;
-    // //BELOW is technically an empty array in the data set ??? 
-    // this.roomServiceCharges = hotelData.roomServiceCharges;
-    // this.number = hotelData.number;
-    // this.roomType = hotelData.roomType;
-    // //SINCE below is a boolean, can I just assign it as such? DBL check on 
-    // this.bidet = hotelData.bidet;
-    // this.bedSize = hotelData.bedSize;
-    // this.numBeds = hotelData.numBeds;
+    this.id = bookingData.id;
+    this.userID = bookingData.userID
+    this.date = bookingData.date;
+    this.roomNumber = bookingData.roomNumer;
+    this.roomServiceCharges = [];
+    this.number = roomData.number;
+    this.roomType = roomData.roomType;
+    this.bidet = roomData.bidet;
+    this.bedSize = roomData.bedSize;
+    this.numBeds = roomData.numBeds;
     this.costPerNight = 0;
     this.currentCustomerBookings;
   }
+
   findCurrentCustomerBookings() {
     //SORT BY DATE AND DAYJS write a helper function
     let filteredBookings = this.bookings.filter((booking) => {
@@ -34,6 +33,19 @@ class Hotel {
     //sorrt below by date using .sort and dayjs
     this.currentCustomerBookings = filteredBookings;
   }
+
+  //FUNCTION KEEPS BREAKING RE-DO AND ASK KATIE ABOUT 
+  // findTotalSpentOnRooms() {
+  //   let totalAmtSpent = this.bookings((acc, booking) => {
+    //need to match the customer id to the current bookings id and the room id
+    //above that functionality has the bookings already sorted to match
+    // the bookingID to the current customer id
+    //SO this functionality needs to take the bookings and * by room?
+      
+
+  // })
+  
+      
 }
 
 export default Hotel;

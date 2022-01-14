@@ -1,18 +1,17 @@
 import { expect } from "chai";
-import Customer from '../src/classes/Customer';
 import Hotel from '../src/classes/Hotel';
 
 
 //NEED TO RETURN TO FIGURE OUT SAD PATH TESTING!!!
 
 describe('Hotel', () => {
+  let hotel;
   let roomData;
   let bookingData;
-  let hotel;
-  let customerData;
 
 
   beforeEach(function() {
+    
     bookingData = {
       'id': "5fwrgu4i7k55hl6sz",
       'userID': 9,
@@ -59,7 +58,9 @@ describe('Hotel', () => {
       'costPerNight': 491.14
     };
 
-    hotel = new Hotel(roomData, bookingData, customerData)
+    hotel = new Hotel([bookingData, roomData]);
+
+
   });
   
 
@@ -72,15 +73,15 @@ describe('Hotel', () => {
   });
 
   it('should have a booking ID', function() {
-    expect(hotel.id).to.equal('5fwrgu4i7k55hl6sz');
+    expect(bookingData.id).to.equal('5fwrgu4i7k55hl6sz');
   });
 
   it('should have a booking UserID', function() {
-    expect(hotel.userID).to.equal(9);
+    expect(bookingData.userID).to.equal(9);
   });
 
   it('should have a booking date', function() {
-    expect(hotel.date).to.equal("2020/04/22");
+    expect(bookingData.date).to.equal("2020/04/22");
   });
 
   //BELOW testing ONLY working if it is bookingData.roomNumber??
@@ -91,27 +92,27 @@ describe('Hotel', () => {
   //   });
 
   it('should have room service charges', function() {
-    expect(hotel.roomServiceCharges).to.deep.equal([]);
+    expect(bookingData.roomServiceCharges).to.deep.equal([]);
   });
 
   it('should have a number', function() {
-    expect(hotel.number).to.equal(1);
+    expect(roomData.number).to.equal(1);
   });
 
   it('should have a room type', function() {
-    expect(hotel.roomType).to.equal('residential suite');
+    expect(roomData.roomType).to.equal('residential suite');
   });
 
   it('should have a bidet', function() {
-    expect(hotel.bidet).to.equal(true);
+    expect(roomData.bidet).to.equal(true);
   });
 
   it('should have a bed size', function() {
-    expect(hotel.bedSize).to.equal('queen');
+    expect(roomData.bedSize).to.equal('queen');
   });
 
   it('should have a bed number per room', function() {
-    expect(hotel.numBeds).to.equal(1);
+    expect(roomData.numBeds).to.equal(1);
   });
 
   //BELOW is failing, does it need to be tested?

@@ -1,6 +1,7 @@
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
   // eslint-disable-next-line max-len
+  /* eslint-disable max-len */
 
 // An example of how you tell webpack to use a CSS (SCSS) file
 //IMPORTED FILES
@@ -34,21 +35,14 @@ function loadApiData() {
     });
 }
 
-// function getSingleCustomer() {
-//   fetchSingleCustomer(1)
-//   .then( customerData => { 
-//     customer = new Customer(customerData)
-//     hotel.currentCustomer = customer
-//   })
-//   }
-
-
  
 function loadCustomer(customer) {
   domUpdates.greetCustomerByName(customer);
   hotel.findCurrentCustomerBookings()
-  console.log(hotel.currentCustomerBookings)
+  // hotel.findTotalSpentOnRooms()
+  // console.log(hotel.currentCustomerBookings)
   domUpdates.displayCurrentCustomerBookings(hotel.currentCustomerBookings);
+  // domUpdates.displayTotalSpent(hotel.currentCustomerBookings)
 }
 
 //EVENT LISTENERS 
