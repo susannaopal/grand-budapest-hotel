@@ -15,15 +15,13 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
   background-size: cover;
 }
 
 nav {
   background: black;
-  // height: 30%;
-  // min-height: 50px;
-  height: 86px; 
+  height: 93px; 
   align-items: flex-end;
   flex-direction: row;
   text-align: center;
@@ -88,7 +86,6 @@ text-align: center;
 
 .bookings-div,
 .available-rooms-div {
-  border: 2px purple solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,7 +96,7 @@ text-align: center;
 
 .booking-title,
 .available-title {
-  border: 2px solid white;
+  border: $border;
   background-color: black;
 
 }
@@ -113,7 +110,7 @@ text-align: center;
   margin-right: 5%;
   width: 100%;
   background-color: black;
-  border: 2px solid white;
+  border: $border;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -132,24 +129,19 @@ text-align: center;
   // overflow-y: auto;
 }
 
-.newBookingCard{
-  border: dotted white 1px;
-}
-
 .traveler-details-aside {
   display: flex;
   flex-direction: column;
   background-color: black;
   margin-left: 4.5%;
   margin-bottom: 70%;
-  border: 2px solid white;
+  border: $border;
 }
 
 .all-hotel-bookings-section {
   display: flex;
   text-align: center;
   justify-content: flex-start;
-  border: solid red 2px;
 }
 
 .new-booking-section {
@@ -161,10 +153,8 @@ text-align: center;
 .current-stays {
   display: flex;
   flex-direction: column;
-  border: 2px solid orange;
   margin-left: 10%;
 }
-
 
 // .traveler-details,
 // .user-login-section,
@@ -174,8 +164,7 @@ text-align: center;
 .filter-hotel-rooms,
 .room-grid
  {
-  border: 2px solid white;
-  // background: $section-color;
+  border: $border;
 }
 
 .make-booking-btn 
