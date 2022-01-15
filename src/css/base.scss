@@ -29,8 +29,20 @@ nav {
 
 .top-btn-bar {
   display: flex;
-  justify-content: space-between;}
+  justify-content: space-between;
+}
 
+.return-bookings-view,
+.logout-btn,
+.submission-btn,
+.submit-tag-view-btn {
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  // color: #fff;
+  border: none;
+  border-radius: 1px;
+}
 
 main {
   display: flex;

@@ -19,7 +19,7 @@ import dayjs from "dayjs";
 const submitBtn = document.querySelector('.submission-btn');
 const customerBookingsView = document.querySelector('.customer-bookings-section');
 const availRoomsViews = document.querySelector('.available-rooms-section');
-const tagSubmitBtn = document.querySelector('.submit-tag-view');
+const tagSubmitBtn = document.querySelector('.submit-tag-view-btn');
 const returnHomeBtn = document.querySelector('.return-bookings-view');
 
 //GLOBAL VARIABLES

@@ -45,19 +45,19 @@
           <div class="date-section-div">
             <section class="search-section">
               <label class="select-date-label" for="date">Select a Date:</label>
-              <input class="available-rooms-input" type="date" id="calendar" name="date">
+              <input class="available-rooms-input" type="date" id="calendar" name="date" aria-label="calendar-date-selector">
               <button class="submission-btn" type="submit">Submit</button>
             </section>
           </div>
           <label class="room-type-label">🛏  Select a Room:</label>
-          <select id="roomTags-type-search" class="roomTags-type-input" type="dropdown">
+          <select id="roomTags-type-search" class="roomTags-type-input" type="dropdown" aria-label="room-type-dropdown">
             <option value="All">All</option>
             <option value="suite">Suite</option>
             <option value="residential suite">Residential Suite</option>
             <option value="junior suite">Junior Suite</option>
             <option value="single room">Single</option>
           <select/>  
-          <button class="submit-tag-view" type="submit">Submit</button>
+          <button class="submit-tag-view-btn" type="submit">Submit</button>
         </form>
       </section>
     </aside>  
