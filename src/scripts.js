@@ -19,6 +19,11 @@ import dayjs from "dayjs";
 
 //FETCH ALL CUST FOR USER LOGIN section
 
+//QUERY SELECTORS
+const customerBookingsView = document.querySelector('.customer-bookings-section')
+const availRoomsViews = document.querySelector('.available-rooms-section')
+
+
 //GLOBAL VARIABLES
 let hotel;
 let customer;
@@ -48,16 +53,15 @@ const loadCustomer = (customer) => {
 };
 
 const findVacantRooms = (event) => {
-  event.preventDefault()
+  event.preventDefault();
   let selectedDate = document.getElementById("calendar").value;
   let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
   hotel.findAvailableRooms(formattedDate);
   domUpdates.displayAllAvailableRooms(hotel.availableRooms);
+  domUpdates.addHidden([customerBookingsView]);
+  domUpdates.removeHidden([availRoomsViews]);
 };
 
-
-
- //event.target for the buttons (so it can know which room to book [every room needs to have ID aka room# in domupdates const room card = article class / id (room.number) and event.target closest id])
 
 //EVENT LISTENERS 
 window.addEventListener('load', loadApiData);

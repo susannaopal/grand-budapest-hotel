@@ -2,7 +2,8 @@
 
 import Hotel from "./classes/Hotel";
 import Customer from "./classes/Customer";
-
+let hotel;
+let customer;
 // const calendarClick = document.querySelector('.available-rooms-input');
 // calendarClick.addEventListener('change', () => {
 //   console.log("change event")
@@ -15,16 +16,15 @@ import Customer from "./classes/Customer";
 
 const domUpdates = {
 
-  hide(...views) {
-    views.forEach(view => {
-      view.classList.add("hidden")
-    })
+  addHidden(elements) {
+    elements.forEach(item => {
+      item.classList.add("hidden");
+    });
   },
-
-  show(...views) {
-    views.forEach(view => {
-    view.classList.remove("hidden");
-    })
+  removeHidden(elements) {
+    elements.forEach(item => {
+      item.classList.remove("hidden");
+    });
   },
 
   greetCustomerByName(customer) {
@@ -55,7 +55,6 @@ const domUpdates = {
   displayAllAvailableRooms(allAvailableRooms) {
     let availableRoomsSection = document.querySelector('.available-rooms-card');
     availableRoomsSection.innerHTML = '';
-    console.log("are you working this far?")
     allAvailableRooms.forEach((room) => {
       const availRoomsCard =
       `<article class= 'number ${room.number}>'
@@ -69,7 +68,6 @@ const domUpdates = {
       </article>`;
       availableRoomsSection.innerHTML += availRoomsCard;
     });
-    console.log("anything working down here?")
   },
 
  //event.target for the button to book the room (so it can know which room to book [every room needs to have ID aka room.number in domupdates const room card = article class / id (room.number) and event.target closest id])

@@ -25,7 +25,7 @@ class Hotel {
         return - 1 
       } if (a.date > b.date) { 
         return 1 
-      }else { 
+      } else { 
         return 0 };
     });
     this.currentCustomerBookings = filteredBookings; 
