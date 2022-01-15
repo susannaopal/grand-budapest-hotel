@@ -11,6 +11,7 @@ class Hotel {
     this.bookings = bookingData;
     this.currentCustomer = currentCustomerData;
     this.currentCustomerBookings;
+    this.customerAmountSpent;
     this.unavailableRooms;
     this.availableRooms;
   }
@@ -19,9 +20,12 @@ class Hotel {
     //SORT BY DATE AND DAYJS write a helper function
     let filteredBookings = this.bookings.filter((booking) => {
       return booking.userID === this.currentCustomer.id;
+    }).sort((a, b) => {
+      if (a.date < b.date) { return - 1 }
+      if (a.date > b.date) { return 1 }
+      else { return 0 };
     });
-    //sorrt below by date using .sort and dayjs
-    this.currentCustomerBookings = filteredBookings;
+    this.currentCustomerBookings = filteredBookings; 
   }
 
   findTotalSpentOnRooms() {
@@ -32,10 +36,10 @@ class Hotel {
       });
       acc += hotelRoom.costPerNight;
       return acc;
-    }, 0)
-    return totalSpent.toFixed();
+    }, 0);
+    return totalSpent = Number(totalSpent.toFixed(2));
   }
-  
+
   findAvailableRooms(formattedDate) {
     this.unavailableRooms = [];
     this.availableRooms = [];
