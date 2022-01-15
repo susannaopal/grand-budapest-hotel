@@ -2,14 +2,13 @@
 
 import Hotel from "./classes/Hotel";
 
-const calendarClick = document.querySelector('.available-rooms-input');
-calendarClick.addEventListener('change', () => {
-  console.log("click event")
-})
+// const calendarClick = document.querySelector('.available-rooms-input');
+// calendarClick.addEventListener('change', () => {
+//   console.log("change event")
+// })
 
-//mske a change event for drop down rooms
-
-//To Do: console log the date inside the addeventlistener (get specific date, whatever is being clicked on and comes from the event)
+//mske a change event for drop down rooms for select a room (like above & see below)
+//To Do for bullet2: console log the date inside the addeventlistener (get specific date, whatever is being clicked on and comes from the event)
 //make a new function in the hotel class to filter by date and then hook that up to this
 
 
@@ -22,7 +21,7 @@ const domUpdates = {
   },
 
   show(...views) {
-    views.forEach(view=> {
+    views.forEach(view => {
     view.classList.remove("hidden");
     })
   },

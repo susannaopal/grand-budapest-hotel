@@ -1,4 +1,6 @@
 /* eslint-disable max-len */
+import dayjs from "dayjs";
+//^^^^any file to use on this needs to be imported
 
 class Hotel {
 
@@ -9,6 +11,8 @@ class Hotel {
     this.bookings = bookingData;
     this.currentCustomer = currentCustomerData;
     this.currentCustomerBookings;
+    this.unavailableRooms;
+    this.availableRooms;
   }
 
   findCurrentCustomerBookings() {
@@ -31,6 +35,26 @@ class Hotel {
     }, 0)
     return totalSpent.toFixed();
   }
+  
+  findAvailableRooms(formattedDate) {
+    this.unavailableRooms = [];
+    this.availableRooms = [];
+    const filteredBookings = this.bookings.filter((booking) => {
+      if (booking.date === formattedDate) {
+        this.unavailableRooms.push(booking.roomNumber)
+      }
+    })    
+    this.rooms.forEach((room) => {
+      if (this.unavailableRooms.includes(room.number)) {
+        return 
+      } else {
+        this.availableRooms.push(room)
+      }
+    })
+  }
+
+  //USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)
+
 }
 
 export default Hotel;

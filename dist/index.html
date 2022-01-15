@@ -10,20 +10,15 @@
   <title>The Grand Budapest Hotel</title>
 </head>
 <body style="background-image: url(./images/hotel-background.png);" alt="hotel scene background">
-
 <body> 
-  <!-- <body style="background-image: url(./images/keys-icon.png);"></body> -->
-    <!-- <img class="key-img" src="./images/keys-icon.png" alt="antique key"> -->
   <nav>
     <h1>~Welcome to the Grand Budapest Hotel~</h1>
     <div class="logout">
       <button class="logout-btn">Logout</button>
     </div>
-
   </nav>
   <main>      
   <section class="user-login-section hidden">
-    <!-- <img class="budapest-hotel-img" src="./images/hotel-img.png" alt="hotel photograph"> -->
     <div class="login-form">
       <p>👇 Please login to access your hotel reservations: 👇</p>
       <form class="container">
@@ -35,7 +30,6 @@
       </form>
     </div>
   </section>
-
   <section class="dashboard-view-section ">
     <aside class="traveler-details">
       <div class= "welcome-customer-details">
@@ -45,13 +39,14 @@
       <div class="new-booking-section">
         <p class="click-new">🗓 Make a new booking: 
       </div>
-      <section class="search-field-container">
-        <section class="search-container ">
-          <section class="search-container ">
+      <section class="search-field-section">
+        <form class="search-section ">
+          <section class="search-section ">
             <label class="select-date-label" for="date">Select a Date:</label>
-        <input class="available-rooms-input" type="date" id="date" name="date">
+            <input class="available-rooms-input" type="date" id="calendar" name="date">
+            <button class="submission-btn" type="submit">Submit</button>
           </section>
-          <label class="room-type-label">🛏  Select a Room</label>
+          <label class="room-type-label">🛏  Select a Room:</label>
           <select id="room-type-search" class="room-type-input" type="dropdown">
             <option value="All">All</option>
             <option value="suite">Suite</option>
@@ -59,8 +54,8 @@
             <option value="junior-suite">Junior Suite</option>
             <option value="single-room">Single</option>
           <select/>  
-          <button class="room-type-search-button search-button">Search</button>
-        </section>
+        </form>
+      </section>
     </aside>  
     <div class="bookings-div ">
         <div class="booking-title">
@@ -83,7 +78,5 @@
 </main>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
-
 </body>
-
 </html>
