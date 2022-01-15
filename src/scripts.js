@@ -19,7 +19,8 @@ import dayjs from "dayjs";
 const submitBtn = document.querySelector('.submission-btn');
 const customerBookingsView = document.querySelector('.customer-bookings-section');
 const availRoomsViews = document.querySelector('.available-rooms-section');
-const roomTagsFilter = document.querySelector('.roomTags-type-input')
+const tagsDropDown = document.querySelector('.roomTags-type-input')
+const tagSubmit = document.querySelector('.submit-tag-view')
 
 //GLOBAL VARIABLES
 let hotel;
@@ -58,15 +59,19 @@ const findVacantRooms = (event) => {
   domUpdates.removeHidden([availRoomsViews]);
 };
 
-const filterByRoomTags = (event) => {
+const findFilteredByTagsRooms = (event) => {
   event.preventDefault();
- console.log("anything here?")
+  let selectedTag = document.getElementById("roomTags-type-search").value;
+  hotel.filterSelectedRoomTypeOnly(selectedTag);
+  console.log("NOTE:", hotel.roomsByTag)
+  domUpdates.displayAllAvailableRooms(hotel.roomsByTag);
 };
+
 
 //EVENT LISTENERS 
 window.addEventListener('load', loadApiData);
 submitBtn.addEventListener('click', findVacantRooms);
-roomTagsFilter.addEventListener('change', filterByRoomTags);
+tagSubmit.addEventListener('click', findFilteredByTagsRooms);
 
 
 //NOTE FOR ME FOR THE FUTURE: use on change for a search ==> instead of hitting search as someone actively then fire change event listener everytime that change input changes

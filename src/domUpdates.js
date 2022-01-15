@@ -68,7 +68,9 @@ const domUpdates = {
       </article>`;
       availableRoomsSection.innerHTML += availRoomsCard;
     });
-  },
+  }
+
+  
 
  //event.target for the button to book the room (so it can know which room to book [every room needs to have ID aka room.number in domupdates const room card = article class / id (room.number) and event.target closest id])
 

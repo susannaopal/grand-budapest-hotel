@@ -14,6 +14,7 @@ class Hotel {
     this.customerAmountSpent;
     this.unavailableRooms;
     this.availableRooms;
+    this.roomsByTag;
   }
 
   findCurrentCustomerBookings() {
@@ -58,46 +59,22 @@ class Hotel {
       }
     });
   }
-
-  filterSelectedRoomTypeOnly (selectedTags) {
-    console.log("selected room tag", selectedTags)
-    this.findAvailableRooms(formattedDate);
-    const filteredRoomByTag = this.rooms.filter((room) => {
-      return selectedTags.every((selectedTag) =>
-        room.tags.includes(selectedTag)
-      );
+//make sure value of tags match room type
+  filterSelectedRoomTypeOnly(tag) {
+    // console.log("selected room tag", tag)
+    this.roomsByTag = [];
+    const filteredRoomByTag = this.availableRooms.filter((room) => {
+      if (room.roomType === tag) {
+        this.roomsByTag.push(room)
+      }
     });
-    console.log("working or not?")
-    return filteredRoomByTag;
   }
 }
-
-// filterTags(selectedTags) {
-//   const filteredRecipesByTag = this.recipes.filter((recipe) => {
-//     return selectedTags.every((selectedTag) =>
-//       recipe.tags.includes(selectedTag)
-//     );
-//   });
-//   return filteredRecipesByTag;
+//figure out how to handle the all situation with a conditional 
+//maube run avail rooms again
 
 
-// filteredRecipes(searchedIngredient, searchedName) {
-//   const filteredIngredient = this.recipes.filter((recipe) => {
-//     return (
-//       (searchedIngredient === "" ||
-//         recipe
-//           .determineIngredients()
-//           .some((ingredient) =>
-//             ingredient
-//               .toLowerCase()
-//               .includes(searchedIngredient.toLowerCase())
-//           )) &&
-//       recipe.name.toLowerCase().includes(searchedName.toLowerCase())
-//     );
-//   });
-//   return filteredIngredient;
-// }
-// }
+
 
 //USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)
 
