@@ -46,18 +46,18 @@ class Hotel {
   findAvailableRooms(formattedDate) {
     this.unavailableRooms = [];
     this.availableRooms = [];
-    const filteredBookings = this.bookings.filter((booking) => {
+    const allFilteredBookings = this.bookings.filter((booking) => {
       if (booking.date === formattedDate) {
         this.unavailableRooms.push(booking.roomNumber)
       }
-    })    
+    });    
     this.rooms.forEach((room) => {
       if (this.unavailableRooms.includes(room.number)) {
         return 
       } else {
-        this.availableRooms.push(room)
+        this.availableRooms.push(room);
       }
-    })
+    });
   }
 
   //USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)

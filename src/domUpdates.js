@@ -43,7 +43,7 @@ const domUpdates = {
       <p>Room Number ${booking.roomNumber}</p>
       </article>`;
       bookingsSection.innerHTML += newBookingCard;
-    })
+    });
   },
 
   displayTotalSpent(hotel) {
@@ -51,6 +51,28 @@ const domUpdates = {
     let totalMoneySpent = document.querySelector('.money-spent');
     totalMoneySpent.innerText += `You have spent $${amount} 💵`;
   },
+
+  displayAllAvailableRooms(allAvailableRooms) {
+    let availableRoomsSection = document.querySelector('.available-rooms-card');
+    availableRoomsSection.innerHTML = '';
+    console.log("are you working this far?")
+    allAvailableRooms.forEach((room) => {
+      const availRoomsCard =
+      `<article class= 'number ${room.number}>'
+      <h3>Room Details</h3>
+      <p>Room Type ${room.roomType}</p>
+      <p>Bed Size ${room.bedSize}</p>
+      <p>Number of Beds ${room.numBeds}</p>
+      <p>Bed Size ${room.bedSize}</p>
+      <p>Cost Per Night ${room.costPerNight}</p>
+      <button class="book-btn">Book Room</button>
+      </article>`;
+      availableRoomsSection.innerHTML += availRoomsCard;
+    });
+    console.log("anything working down here?")
+  },
+
+ //event.target for the button to book the room (so it can know which room to book [every room needs to have ID aka room.number in domupdates const room card = article class / id (room.number) and event.target closest id])
 
 };
     

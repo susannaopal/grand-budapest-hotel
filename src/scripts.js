@@ -36,6 +36,7 @@ const loadApiData = () => {
       loadCustomer(customer);
       document.getElementById("calendar").setAttribute("min", today);
       document.getElementById("calendar").setAttribute("value", today);
+      // loadAllAvailRooms();
     });
 };
 
@@ -46,16 +47,17 @@ const loadCustomer = (customer) => {
   domUpdates.displayTotalSpent(hotel);
 };
 
-//SAT AM: NEXT STEP --> get the VACANT ROOMS displaying next on the dom (do first thing Sat am)
 const findVacantRooms = (event) => {
   event.preventDefault()
   let selectedDate = document.getElementById("calendar").value;
   let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
   hotel.findAvailableRooms(formattedDate);
-  console.log("are you working", hotel.availableRooms);
+  domUpdates.displayAllAvailableRooms(hotel.availableRooms);
 };
 
- 
+
+
+ //event.target for the buttons (so it can know which room to book [every room needs to have ID aka room# in domupdates const room card = article class / id (room.number) and event.target closest id])
 
 //EVENT LISTENERS 
 window.addEventListener('load', loadApiData);
