@@ -59,13 +59,49 @@ class Hotel {
     });
   }
 
-  findSelectedRoomTypeOnly () {
+  filterSelectedRoomTypeOnly (selectedTags) {
+    console.log("selected room tag", selectedTags)
     this.findAvailableRooms(formattedDate);
+    const filteredRoomByTag = this.rooms.filter((room) => {
+      return selectedTags.every((selectedTag) =>
+        room.tags.includes(selectedTag)
+      );
+    });
+    console.log("working or not?")
+    return filteredRoomByTag;
   }
-
-  //USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)
-
 }
+
+// filterTags(selectedTags) {
+//   const filteredRecipesByTag = this.recipes.filter((recipe) => {
+//     return selectedTags.every((selectedTag) =>
+//       recipe.tags.includes(selectedTag)
+//     );
+//   });
+//   return filteredRecipesByTag;
+
+
+// filteredRecipes(searchedIngredient, searchedName) {
+//   const filteredIngredient = this.recipes.filter((recipe) => {
+//     return (
+//       (searchedIngredient === "" ||
+//         recipe
+//           .determineIngredients()
+//           .some((ingredient) =>
+//             ingredient
+//               .toLowerCase()
+//               .includes(searchedIngredient.toLowerCase())
+//           )) &&
+//       recipe.name.toLowerCase().includes(searchedName.toLowerCase())
+//     );
+//   });
+//   return filteredIngredient;
+// }
+// }
+
+//USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)
+
+
 
 export default Hotel;
 

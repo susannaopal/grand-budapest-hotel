@@ -123,5 +123,7 @@ describe('Hotel', () => {
   //   console.log("are you working")
   //   expect(hotel.findAvailableRooms()).to.equal('2022/04/22');
   // });
+
+  //NEED A TEST FOR FILTERING BY ROOM!
 });
 

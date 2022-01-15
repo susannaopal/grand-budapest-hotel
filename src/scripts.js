@@ -16,9 +16,10 @@ import dayjs from "dayjs";
 //FETCH ALL CUST FOR USER LOGIN section
 
 //QUERY SELECTORS
-const customerBookingsView = document.querySelector('.customer-bookings-section')
-const availRoomsViews = document.querySelector('.available-rooms-section')
-
+const submitBtn = document.querySelector('.submission-btn');
+const customerBookingsView = document.querySelector('.customer-bookings-section');
+const availRoomsViews = document.querySelector('.available-rooms-section');
+const roomTagsFilter = document.querySelector('.roomTags-type-input')
 
 //GLOBAL VARIABLES
 let hotel;
@@ -37,7 +38,6 @@ const loadApiData = () => {
       loadCustomer(customer);
       document.getElementById("calendar").setAttribute("min", today);
       document.getElementById("calendar").setAttribute("value", today);
-      // loadAllAvailRooms();
     });
 };
 
@@ -58,11 +58,15 @@ const findVacantRooms = (event) => {
   domUpdates.removeHidden([availRoomsViews]);
 };
 
+const filterByRoomTags = (event) => {
+  event.preventDefault();
+ console.log("anything here?")
+};
 
 //EVENT LISTENERS 
 window.addEventListener('load', loadApiData);
-const submitBtn = document.querySelector('.submission-btn');
 submitBtn.addEventListener('click', findVacantRooms);
+roomTagsFilter.addEventListener('change', filterByRoomTags);
 
 
 //NOTE FOR ME FOR THE FUTURE: use on change for a search ==> instead of hitting search as someone actively then fire change event listener everytime that change input changes
