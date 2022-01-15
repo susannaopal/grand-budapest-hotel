@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 
 import Hotel from "./classes/Hotel";
+import Customer from "./classes/Customer";
 
 // const calendarClick = document.querySelector('.available-rooms-input');
 // calendarClick.addEventListener('change', () => {
