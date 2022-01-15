@@ -63,7 +63,6 @@ const findFilteredByTagsRooms = (event) => {
   event.preventDefault();
   let selectedTag = document.getElementById("roomTags-type-search").value;
   hotel.filterSelectedRoomTypeOnly(selectedTag);
-  console.log("NOTE:", hotel.roomsByTag)
   domUpdates.displayAllAvailableRooms(hotel.roomsByTag);
 };
 
