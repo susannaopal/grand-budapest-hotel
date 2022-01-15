@@ -136,12 +136,13 @@ text-align: center;
   border: dotted white 1px;
 }
 
-.traveler-details {
+.traveler-details-aside {
   display: flex;
   flex-direction: column;
   background-color: black;
-  margin-left: 5.5%;
-  margin-bottom: 80%;
+  margin-left: 4.5%;
+  margin-bottom: 70%;
+  border: 2px solid white;
 }
 
 .all-hotel-bookings-section {
@@ -165,7 +166,7 @@ text-align: center;
 }
 
 
-.traveler-details,
+// .traveler-details,
 // .user-login-section,
 .welcome-customer-details,
 .past-bookings,

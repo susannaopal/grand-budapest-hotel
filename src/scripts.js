@@ -29,7 +29,7 @@ let today = dayjs().format('YYYY-MM-DD');
 //FUNCTIONS
 const loadApiData = () => {
   //skipping over allcustomers for now
-  Promise.all([fetchSingleCustomer(16), fetchAllCustomers(), fetchAllRooms(), fetchAllBookings()])
+  Promise.all([fetchSingleCustomer(50), fetchAllCustomers(), fetchAllRooms(), fetchAllBookings()])
     .then(data => {
       customer = new Customer(data[0]);
       hotel = new Hotel(data[0], data[2], data[3]);
