@@ -1,6 +1,3 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-  // eslint-disable-next-line max-len
   /* eslint-disable max-len */
 
 // An example of how you tell webpack to use a CSS (SCSS) file
@@ -14,7 +11,6 @@ import './images/hotel-img.png'
 import './images/hotel-background.png'
 import dayjs from "dayjs";
 
-//will need functionality to not let anyone select a date in the past 
 
 
 //FETCH ALL CUST FOR USER LOGIN section
@@ -67,7 +63,6 @@ const findVacantRooms = (event) => {
 window.addEventListener('load', loadApiData);
 const submitBtn = document.querySelector('.submission-btn');
 submitBtn.addEventListener('click', findVacantRooms);
-
 
 
 //NOTE FOR ME FOR THE FUTURE: use on change for a search ==> instead of hitting search as someone actively then fire change event listener everytime that change input changes

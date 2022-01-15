@@ -3,7 +3,6 @@ import Customer from '../src/classes/Customer';
 
 
 describe('Customer', () => {
-  // let customerData;
   let customer;
   let customer2;
   let customer3;
@@ -35,22 +34,19 @@ describe('Customer', () => {
     
   it('Should have an ID', () => {
     expect(customer.id).to.equal(1);
-  });
-
-  it('Should have an ID', () => {
     expect(customer3.id).to.equal('');
   });
-    
-  it('Should have a name', () => {
-    expect(customer.name).to.equal('Leatha Ullrich');
-  });
 
   it('Should have a name', () => {
+    expect(customer.name).to.equal('Leatha Ullrich');
     expect(customer2.name).to.equal('');
+
   });
 
   it("should have a first name", () => {
     expect(customer.getCustomerName()).to.equal('Leatha');
+    expect(customer2.getCustomerName()).to.equal('');
+
   });
 });
 

@@ -59,12 +59,12 @@ const domUpdates = {
       const availRoomsCard =
       `<article class= 'number ${room.number}>'
       <h3>Room Details</h3>
-      <p>Room Type ${room.roomType}</p>
-      <p>Bed Size ${room.bedSize}</p>
-      <p>Number of Beds ${room.numBeds}</p>
-      <p>Bed Size ${room.bedSize}</p>
-      <p>Cost Per Night ${room.costPerNight}</p>
-      <button class="book-btn">Book Room</button>
+      <p>Room Type: ${room.roomType}</p>
+      <p>Bed Size: ${room.bedSize}</p>
+      <p>Number of Beds: ${room.numBeds}</p>
+      <p>Bed Size: ${room.bedSize}</p>
+      <p>Cost Per Night: $${room.costPerNight}</p>
+      <button class="book-btn">Book This Room</button>
       </article>`;
       availableRoomsSection.innerHTML += availRoomsCard;
     });

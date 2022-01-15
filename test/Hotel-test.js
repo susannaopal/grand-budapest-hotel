@@ -6,10 +6,13 @@ import Customer from '../src/classes/Customer';
 
 describe('Hotel', () => {
   let hotel;
-  let customer;
   let currentCustomerData;
   let roomData;
   let bookingData;
+  let hotel2;
+  let currentCustomerData2;
+  let roomData2;
+  let bookingData2;
 
 
   beforeEach(function() {
@@ -63,8 +66,11 @@ describe('Hotel', () => {
       'roomNumber': 12,
       'roomServiceCharges': [ ]
     }];
-
     hotel = new Hotel(currentCustomerData, roomData, bookingData);
+
+    roomData2 = [{}];
+    hotel2 = new Hotel(roomData);
+
 //params have to be in order of the class constructor
 
   });
@@ -100,6 +106,9 @@ describe('Hotel', () => {
       'roomNumber': 15,
       'roomServiceCharges': [ ]
     }]);
+    expect(hotel2.currentCustomerBookings).to.be.equal(undefined)
+    hotel.findCurrentCustomerBookings()
+    expect(hotel2.currentCustomerBookings).to.deep.equal(undefined);
   });
   
   it('Should be able to calculate the total cost of a customer booking', function() {

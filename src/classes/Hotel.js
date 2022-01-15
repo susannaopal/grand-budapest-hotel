@@ -17,7 +17,6 @@ class Hotel {
   }
 
   findCurrentCustomerBookings() {
-    //SORT BY DATE AND DAYJS write a helper function
     let filteredBookings = this.bookings.filter((booking) => {
       return booking.userID === this.currentCustomer.id;
     }).sort((a, b) => {
@@ -53,11 +52,15 @@ class Hotel {
     });    
     this.rooms.forEach((room) => {
       if (this.unavailableRooms.includes(room.number)) {
-        return 
+        return; 
       } else {
         this.availableRooms.push(room);
       }
     });
+  }
+
+  findSelectedRoomTypeOnly () {
+    this.findAvailableRooms(formattedDate);
   }
 
   //USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)

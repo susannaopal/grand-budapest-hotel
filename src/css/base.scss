@@ -104,14 +104,9 @@ text-align: center;
 
 .all-hotel-bookings,
 .available-bookings {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: row;
-  margin-left: 15%;
-  margin-right: 5%;
   width: 100%;
   background-color: black;
-  border: $border;
+  border: 2px solid white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -137,6 +132,10 @@ text-align: center;
   margin-left: 4.5%;
   margin-bottom: 40%;
   border: $border;
+}
+
+.date-section-div{
+  margin-bottom: 15%;
 }
 
 .all-hotel-bookings-section {
