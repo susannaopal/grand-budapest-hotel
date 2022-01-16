@@ -67,8 +67,8 @@ const findFilteredByTagsRooms = (event) => {
   domUpdates.displayAllAvailableRooms(hotel.roomsByTag);
 };
 
-const returnToHomePage = (event) => {
-  event.preventDefault
+const returnToHomePage = () => {
+  // event.preventDefault;
   domUpdates.removeHidden([customerBookingsView]);
   domUpdates.addHidden([availRoomsViews]);
 };
