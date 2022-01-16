@@ -19,7 +19,7 @@ body {
   background-size: cover;
 }
 
-nav {
+header {
   background: black;
   height: 93px; 
   align-items: flex-end;
@@ -50,14 +50,17 @@ main {
 
 /* ~~~~~ Log-in Page ~~~~~ */
 .user-login-section {
-  font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
-  font-weight: bolder;
-  left: 30%;
-  top: 40%;
   text-align: center;
-  background-color: gray;
+  position: absolute;
+  top: 50%;
+  background-color: black;
+  opacity: 0.9;
+  transform: translate(0, -50%);
+  border: 5px solid white;
+  padding: 10px;
+  margin-left: 20%
 }
 
 .budapest-hotel-img {
@@ -69,7 +72,6 @@ main {
 
 .login-form {
   color: $white-text;
-  margin-left: 15%
 }
 
 /* ~~~~~ Dashboard View ~~~~~ */
