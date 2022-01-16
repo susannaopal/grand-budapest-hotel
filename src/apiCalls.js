@@ -31,24 +31,26 @@ export const fetchAllBookings = () => {
 
 // POST REQUEST
 export const postNewBooking = (
-  userID,
+  user,
   date,
   roomNumber
 ) => {
-  return fetch("http://localhost:3001/api/v1/users", {
+  return fetch("http://localhost:3001/api/v1/bookings", {
     method: "POST",
+    body: JSON.stringify({
+      userID: user.id,
+      date: date,
+      roomNumber: roomNumber
+    }),
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      "userID": userID,
-      "date": date,
-      "roomNumber": roomNumber
-    })
-      .then((response) => response.json())
-      .catch((error) => console.log(error)),
-  });
+    }
+  })
+    .then((response) => response.json())
+    .then((response) => console.log("Posting Response:", response))
+    .catch((error) => console.log(error))
 };
+
 
 //WILL NEED WITH SUCCESSFUL POSTING: { message: 'Booking with id <id> successfully posted', newBooking: <Object with trip info just posted> }

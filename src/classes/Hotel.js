@@ -22,12 +22,13 @@ class Hotel {
     let filteredBookings = this.bookings.filter((booking) => {
       return booking.userID === this.currentCustomer.id;
     }).sort((a, b) => {
-      if (b.date < a.date) { 
-        return - 1 
-      } if (b.date > a.date) { 
-        return 1 
+      if (a.date < b.date) { 
+        return - 1; 
+      } if (a.date > b.date) { 
+        return 1;
       } else { 
-        return 0 };
+        return 0;
+      }
     });
     this.currentCustomerBookings = filteredBookings; 
   }
@@ -50,15 +51,15 @@ class Hotel {
     const allFilteredBookings = this.bookings.filter((booking) => {
       if (booking.date === formattedDate) {
         this.unavailableRooms.push(booking.roomNumber)
-      }
+      } 
     });    
     this.rooms.forEach((room) => {
       if (this.unavailableRooms.includes(room.number)) {
         return; 
       } else {
         this.availableRooms.push(room);
-      }
-    });
+      } 
+    })
   }
 
   filterSelectedRoomTypeOnly(tag) {
@@ -70,36 +71,8 @@ class Hotel {
     });
   }
 
-//   //TO POST//issues with function below:
-// 1)NEEDS AN EVENT TARGET CONNECTED TO THE POSTING FUNCTION (WHICH IS INSIDE OF THE API CALL)
-// //SHOULD IT BE BROUGHT OUT?
-// 2)THE BUTTON IS NOW TECHNICALLY CONNECTED TO THE ROOM.NUMBER ID --> NEEDS A QUERYSELECTOR FOR A CLICK EVENT
-// 3) IN TURN ONCE POSTED THEN ALL OF THE BOOKINGS RETURN UPDATED (IS THIS ENOUGH?)
-// 4) THE POST NEEDS TO MATCH THE USERS ID TO THE BOOKINGS USER ID AND THEN THE BOOKING ROOM NUMBER TO THE ROOM NUMBER (I THINK BUT BELOW ISN'T WORKING)
 
-
-  // makeNewBooking(booking) {
-  //   this.newBooking = [];
-  //   console.log("new", this.newBooking)
-  //   const makeBooking = this.availableRooms.forEach((room) => {
-  //     const roomToBook = this.bookings.find((booking) => {
-  //       if (booking.roomNumber === room.number) {
-  //         if (!roomToBook) {
-  //           this.newBooking.push({   
-  //             userID: booking.userID,
-  //             date: booking.date,
-  //             roomNumber: booking.roomNumber,
-              
-  //           });
-  //         }
-  //       }
-  //     });
-  //   })
-  //   console.log("is there a booking?")
-  //   return makeBooking;
-  // }
 }
-
 
 
 //figure out how to handle the all situation with a conditional 
