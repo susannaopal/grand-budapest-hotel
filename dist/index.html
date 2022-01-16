@@ -11,19 +11,33 @@
 </head>
 <body style="background-image: url(./images/hotel-background.png);" alt="hotel scene background">
 <body> 
-  <section class="dashboard-view-section hidden">
-    <header>
-      <h1>~Welcome to the Grand Budapest Hotel~</h1>
-      <div class="top-btn-bar">
-        <button class="return-bookings-view">Return Home</button>
-        <button class="logout-btn">Logout</button>
-      </div>
-    </header>
-    <main>
+  <nav>
+    <h1>~Welcome to the Grand Budapest Hotel~</h1>
+    <!-- <div class="top-btn-bar">
+      <button class="logout-btn">Logout</button>
+    </div> -->
+  </nav>
+  <main>      
+  <section class="user-login-section hidden">
+    <div class="login-form">
+      <p>👇 Please login to access your hotel reservations: 👇</p>
+      <form class="container">
+        <label for="username-login"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="username-user" required>
+        <label for="user-password"><b>Password:</b></label>
+        <input type="text" placeholder="Enter Password" name="password-user" required>
+        <button class="login-btn" type="submit">Login</button>
+      </form>
+    </div>
+  </section>
+  <section class="dashboard-view-section ">
     <aside class="traveler-details-aside">
       <div class= "welcome-customer-details">
         <h2 class="first-name" id="firstName">Welcome!</h2>
         <p class="money-spent"><p/>
+          <div class="top-btn-bar">
+            <button class="logout-btn">Logout</button>
+          </div>
       </div>
       <div class="new-booking-section">
         <p class="click-new">🗓 Make a new booking: 
@@ -39,6 +53,7 @@
           </div>
           <label class="room-type-label">🛏  Select a Room:</label>
           <select id="roomTags-type-search" class="roomTags-type-input" type="dropdown" aria-label="room-type-dropdown">
+            <!-- <option value="All">All</option> -->
             <option value="suite">Suite</option>
             <option value="residential suite">Residential Suite</option>
             <option value="junior suite">Junior Suite</option>
@@ -60,24 +75,13 @@
     <section class="available-rooms-section">
         <div class="available-title">
         <h3>Available Rooms</h3>
+        <button class="return-bookings-view">Return Home</button>
         </div>
       <section class="available-bookings">
         <section class="available-rooms-card">
         </section>
       </section>
     </section>
-  </section>     
-  <section class="user-login-section ">
-    <div class="login-form">
-      <p>👇 Please login to access your hotel reservations: 👇</p>
-      <form class="container">
-        <label for="username-login"><b>Username:</b></label>
-        <input type="text" placeholder="Enter Username" name="username-user" required>
-        <label for="user-password"><b>Password:</b></label>
-        <input type="text" placeholder="Enter Password" name="password-user" required>
-        <button class="login-btn" type="submit">Login</button>
-      </form>
-    </div>
   </section>
 </main>
   <script src="bundle.js"></script>
