@@ -27,8 +27,6 @@ export const fetchAllBookings = () => {
     .catch(error => console.log(error))
 };
 
-
-
 // POST REQUEST
 export const postNewBooking = (
   user,
@@ -53,4 +51,3 @@ export const postNewBooking = (
 };
 
 
-//WILL NEED WITH SUCCESSFUL POSTING: { message: 'Booking with id <id> successfully posted', newBooking: <Object with trip info just posted> }

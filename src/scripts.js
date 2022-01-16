@@ -1,6 +1,4 @@
   /* eslint-disable max-len */
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 //IMPORTED FILES
 import './css/base.scss';
 import Hotel from './classes/Hotel';
@@ -8,13 +6,7 @@ import Customer from './classes/Customer';
 import domUpdates from './domUpdates';
 import { fetchAllCustomers, fetchSingleCustomer, fetchAllRooms, fetchAllBookings, postNewBooking } from './apiCalls';
 import './images/hotel-img.png'
-import './images/hotel-background.png'
 import dayjs from "dayjs";
-// import { bookingBtnToPost } from './domUpdates';
-//IMPORT FOR ABOVE ISN'T WORKING ?
-
-
-//FETCH ALL CUST FOR USER LOGIN section
 
 //QUERY SELECTORS
 const submitBtn = document.querySelector('.submission-btn');
@@ -34,7 +26,8 @@ let today = dayjs().format('YYYY-MM-DD');
 //FUNCTIONS
 const loadApiData = () => {
   //skipping over allcustomers for now
-  Promise.all([fetchSingleCustomer(33), fetchAllCustomers(), fetchAllRooms(), fetchAllBookings()])
+  //FETCH ALL CUST FOR USER LOGIN section (iteration3)
+  Promise.all([fetchSingleCustomer(50), fetchAllCustomers(), fetchAllRooms(), fetchAllBookings()])
     .then(data => {
       customer = new Customer(data[0]);
       hotel = new Hotel(data[0], data[2], data[3]);
@@ -68,8 +61,8 @@ const findFilteredByTagsRooms = (event) => {
   domUpdates.displayAllAvailableRooms(hotel.roomsByTag);
 };
 
-const returnToHomePage = () => {
-  // event.preventDefault;
+const returnToHomePage = (event) => {
+  event.preventDefault;
   domUpdates.removeHidden([customerBookingsView]);
   domUpdates.addHidden([availRoomsViews]);
 };
@@ -80,6 +73,8 @@ const addNewBooking = (event) => {
   let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
   let roomNumber = parseInt(event.target.closest("article").id);
   postNewBooking(customer, formattedDate, roomNumber);
+  domUpdates.removeHidden([availRoomsViews]);
+  domUpdates.addHidden([customerBookingsView]);
 };
 
 //EVENT LISTENERS 
@@ -87,12 +82,7 @@ window.addEventListener('load', loadApiData);
 submitBtn.addEventListener('click', findVacantRooms);
 tagSubmitBtn.addEventListener('click', findFilteredByTagsRooms);
 returnHomeBtn.addEventListener('click', returnToHomePage);
-// bookingBtnToPost.addEventListener('click', addNewBooking);
 bookAvailRoomCard.addEventListener('click', addNewBooking);
-
-// export { selectedDate, selectedTag  }
-
-//NOTE FOR ME FOR THE FUTURE: use on change for a search ==> instead of hitting search as someone actively then fire change event listener everytime that change input changes
 
 
 

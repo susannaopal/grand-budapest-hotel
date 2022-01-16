@@ -1,11 +1,6 @@
 /* eslint-disable max-len */
 import dayjs from "dayjs";
-//^^^^any file to use on this needs to be imported
-
 class Hotel {
-
-  //NEED TO FIX THE CONSTRUCTOR FOR STUFF THAT IS 
-  // ROOM OR BOOKING DATA BASED ON HOW IT IS BEING IMPORTED VIA THE FETCH CALLS (0-customerData, 2-roomData, 3-bookingData)
   constructor(currentCustomerData, roomData, bookingData) {  
     this.rooms = roomData;
     this.bookings = bookingData;
@@ -23,12 +18,11 @@ class Hotel {
       return booking.userID === this.currentCustomer.id;
     }).sort((a, b) => {
       if (a.date < b.date) { 
-        return - 1; 
+        return - 1 
       } if (a.date > b.date) { 
-        return 1;
+        return 1 
       } else { 
-        return 0;
-      }
+        return 0 };
     });
     this.currentCustomerBookings = filteredBookings; 
   }
@@ -51,38 +45,27 @@ class Hotel {
     const allFilteredBookings = this.bookings.filter((booking) => {
       if (booking.date === formattedDate) {
         this.unavailableRooms.push(booking.roomNumber)
-      } 
+      }
     });    
     this.rooms.forEach((room) => {
       if (this.unavailableRooms.includes(room.number)) {
         return; 
       } else {
         this.availableRooms.push(room);
-      } 
-    })
+      }
+    });
   }
 
   filterSelectedRoomTypeOnly(tag) {
     this.roomsByTag = [];
     const filteredRoomByTag = this.availableRooms.filter((room) => {
       if (room.roomType === tag) {
-        this.roomsByTag.push(room)
+        this.roomsByTag.push(room);
       }
     });
   }
 
-
 }
-
-
-//figure out how to handle the all situation with a conditional 
-//maube run avail rooms again
-
-
-
-
-//USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)
-
 
 
 export default Hotel;
