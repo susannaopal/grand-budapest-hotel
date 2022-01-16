@@ -11,7 +11,7 @@ import './images/hotel-img.png'
 import './images/hotel-background.png'
 import dayjs from "dayjs";
 import { bookingBtnToPost } from './domUpdates';
-
+//IMPORT FOR ABOVE ISN'T WORKING ?
 
 
 //FETCH ALL CUST FOR USER LOGIN section
@@ -71,6 +71,10 @@ const returnToHomePage = () => {
   domUpdates.removeHidden([customerBookingsView]);
   domUpdates.addHidden([availRoomsViews]);
 };
+
+// *****won't let me console log ==> const addNewBooking = () => {
+//   console.log("room.numer")
+// } HAD TO COMMENT OUT ADJOINING EVENT LIS BELOW
 
 // const addNewBooking = () => {
 // apiCalls.postNewBooking(userID, date, roomNumber);
