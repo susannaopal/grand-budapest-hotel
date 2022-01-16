@@ -1,13 +1,18 @@
+ /* eslint-disable max-len */
+
 import { expect } from "chai";
 import Hotel from '../src/classes/Hotel';
 import Customer from '../src/classes/Customer';
 
 describe('Hotel', () => {
   let hotel;
-  let customer;
   let currentCustomerData;
   let roomData;
   let bookingData;
+  let hotel2;
+  let currentCustomerData2;
+  let roomData2;
+  let bookingData2;
 
 
   beforeEach(function() {
@@ -38,7 +43,7 @@ describe('Hotel', () => {
       'bidet': false,
       'bedSize': "king",
       'numBeds': 1,
-      'costPerNight': 491
+      'costPerNight': 491.00
     }];
     bookingData = [{
       'id': "5fwrgu4i7k55hl6sz",
@@ -61,8 +66,11 @@ describe('Hotel', () => {
       'roomNumber': 12,
       'roomServiceCharges': [ ]
     }];
-
     hotel = new Hotel(currentCustomerData, roomData, bookingData);
+
+    roomData2 = [{}];
+    hotel2 = new Hotel(roomData);
+
 //params have to be in order of the class constructor
 
   });
@@ -97,13 +105,25 @@ describe('Hotel', () => {
       'date': "2020/04/22",
       'roomNumber': 15,
       'roomServiceCharges': [ ]
-    }])
+    }]);
+    expect(hotel2.currentCustomerBookings).to.be.equal(undefined)
+    hotel.findCurrentCustomerBookings()
+    expect(hotel2.currentCustomerBookings).to.deep.equal(undefined);
   });
   
-  it('should calculate total cost per customer bookings', function() {
-    hotel.findCurrentCustomerBookings(9)
-    hotel.findTotalSpentOnRooms()
-    expect(hotel.findTotalSpentOnRooms()).to.equal('491');
+  it('Should be able to calculate the total cost of a customer booking', function() {
+    hotel.findCurrentCustomerBookings(9);
+    hotel.findTotalSpentOnRooms();
+    expect(hotel.findTotalSpentOnRooms()).to.equal(491.00);
   });
+
+  //NEED TO FIX THIS BROKEN TEST!
+  // it('Should be able to find available rooms for a customer', function() {
+  //   hotel.findAvailableRooms();
+  //   console.log("are you working")
+  //   expect(hotel.findAvailableRooms()).to.equal('2022/04/22');
+  // });
+
+  //NEED A TEST FOR FILTERING BY ROOM!
 });
 

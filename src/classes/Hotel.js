@@ -11,17 +11,25 @@ class Hotel {
     this.bookings = bookingData;
     this.currentCustomer = currentCustomerData;
     this.currentCustomerBookings;
+    this.customerAmountSpent;
     this.unavailableRooms;
     this.availableRooms;
+    this.roomsByTag;
+    this.newBooking;
   }
 
   findCurrentCustomerBookings() {
-    //SORT BY DATE AND DAYJS write a helper function
     let filteredBookings = this.bookings.filter((booking) => {
       return booking.userID === this.currentCustomer.id;
+    }).sort((a, b) => {
+      if (a.date < b.date) { 
+        return - 1 
+      } if (a.date > b.date) { 
+        return 1 
+      } else { 
+        return 0 };
     });
-    //sorrt below by date using .sort and dayjs
-    this.currentCustomerBookings = filteredBookings;
+    this.currentCustomerBookings = filteredBookings; 
   }
 
   findTotalSpentOnRooms() {
@@ -32,30 +40,69 @@ class Hotel {
       });
       acc += hotelRoom.costPerNight;
       return acc;
-    }, 0)
-    return totalSpent.toFixed();
+    }, 0);
+    return totalSpent = Number(totalSpent.toFixed(2));
   }
-  
+
   findAvailableRooms(formattedDate) {
     this.unavailableRooms = [];
     this.availableRooms = [];
-    const filteredBookings = this.bookings.filter((booking) => {
+    const allFilteredBookings = this.bookings.filter((booking) => {
       if (booking.date === formattedDate) {
         this.unavailableRooms.push(booking.roomNumber)
       }
-    })    
+    });    
     this.rooms.forEach((room) => {
       if (this.unavailableRooms.includes(room.number)) {
-        return 
+        return; 
       } else {
-        this.availableRooms.push(room)
+        this.availableRooms.push(room);
       }
-    })
+    });
   }
 
-  //USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)
+  filterSelectedRoomTypeOnly(tag) {
+    this.roomsByTag = [];
+    const filteredRoomByTag = this.availableRooms.filter((room) => {
+      if (room.roomType === tag) {
+        this.roomsByTag.push(room)
+      }
+    });
+  }
 
+  // makeNewBooking(booking) {
+  //   this.newBooking = [];
+  //   console.log("new", this.newBooking)
+  //   const makeBooking = this.availableRooms.forEach((room) => {
+  //     const roomToBook = this.bookings.find((booking) => {
+  //       if (booking.roomNumber === room.number) {
+  //         if (!roomToBook) {
+  //           this.newBooking.push({   
+  //             userID: booking.userID,
+  //             date: booking.date,
+  //             roomNumber: booking.roomNumber,
+              
+  //           });
+  //         }
+  //       }
+  //     });
+  //   })
+  //   console.log("is there a booking?")
+  //   return makeBooking;
+  // }
 }
+
+
+
+//figure out how to handle the all situation with a conditional 
+//maube run avail rooms again
+
+
+
+
+//USING DAYJS FOR ADDING A BOOKING (same set up as in scripts to take in date selection and format it same way)
+
+
 
 export default Hotel;
 

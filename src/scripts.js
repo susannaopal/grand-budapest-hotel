@@ -1,6 +1,3 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-  // eslint-disable-next-line max-len
   /* eslint-disable max-len */
 
 // An example of how you tell webpack to use a CSS (SCSS) file
@@ -14,10 +11,16 @@ import './images/hotel-img.png'
 import './images/hotel-background.png'
 import dayjs from "dayjs";
 
-//will need functionality to not let anyone select a date in the past 
 
 
 //FETCH ALL CUST FOR USER LOGIN section
+
+//QUERY SELECTORS
+const submitBtn = document.querySelector('.submission-btn');
+const customerBookingsView = document.querySelector('.customer-bookings-section');
+const availRoomsViews = document.querySelector('.available-rooms-section');
+const tagSubmitBtn = document.querySelector('.submit-tag-view-btn');
+const returnHomeBtn = document.querySelector('.return-bookings-view');
 
 //GLOBAL VARIABLES
 let hotel;
@@ -46,28 +49,37 @@ const loadCustomer = (customer) => {
   domUpdates.displayTotalSpent(hotel);
 };
 
-//SAT AM: NEXT STEP --> get the VACANT ROOMS displaying next on the dom (do first thing Sat am)
 const findVacantRooms = (event) => {
-  event.preventDefault()
+  event.preventDefault();
   let selectedDate = document.getElementById("calendar").value;
   let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
   hotel.findAvailableRooms(formattedDate);
-  console.log("are you working", hotel.availableRooms);
+  domUpdates.displayAllAvailableRooms(hotel.availableRooms);
+  domUpdates.addHidden([customerBookingsView]);
+  domUpdates.removeHidden([availRoomsViews]);
 };
 
- 
+const findFilteredByTagsRooms = (event) => {
+  event.preventDefault();
+  let selectedTag = document.getElementById("roomTags-type-search").value;
+  hotel.filterSelectedRoomTypeOnly(selectedTag);
+  domUpdates.displayAllAvailableRooms(hotel.roomsByTag);
+};
+
+
+
+const returnToHomePage = () => {
+  domUpdates.removeHidden([customerBookingsView]);
+  domUpdates.addHidden([availRoomsViews]);
+};
 
 //EVENT LISTENERS 
 window.addEventListener('load', loadApiData);
-const submitBtn = document.querySelector('.submission-btn');
 submitBtn.addEventListener('click', findVacantRooms);
-
-
+tagSubmitBtn.addEventListener('click', findFilteredByTagsRooms);
+returnHomeBtn.addEventListener('click', returnToHomePage)
 
 //NOTE FOR ME FOR THE FUTURE: use on change for a search ==> instead of hitting search as someone actively then fire change event listener everytime that change input changes
 
 
 
-
-
-console.log('This is the JavaScript entry file - your code begins here.');

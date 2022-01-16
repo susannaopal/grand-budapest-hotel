@@ -13,7 +13,8 @@
 <body> 
   <nav>
     <h1>~Welcome to the Grand Budapest Hotel~</h1>
-    <div class="logout">
+    <div class="top-btn-bar">
+      <button class="return-bookings-view">Return Home</button>
       <button class="logout-btn">Logout</button>
     </div>
   </nav>
@@ -31,7 +32,7 @@
     </div>
   </section>
   <section class="dashboard-view-section ">
-    <aside class="traveler-details">
+    <aside class="traveler-details-aside">
       <div class= "welcome-customer-details">
         <h2 class="first-name" id="firstName">Welcome!</h2>
         <p class="money-spent"><p/>
@@ -40,24 +41,27 @@
         <p class="click-new">🗓 Make a new booking: 
       </div>
       <section class="search-field-section">
-        <form class="search-section ">
-          <section class="search-section ">
-            <label class="select-date-label" for="date">Select a Date:</label>
-            <input class="available-rooms-input" type="date" id="calendar" name="date">
-            <button class="submission-btn" type="submit">Submit</button>
-          </section>
+        <form class="search-section"> 
+          <div class="date-section-div">
+            <section class="search-section">
+              <label class="select-date-label" for="date">Select a Date:</label>
+              <input class="available-rooms-input" type="date" id="calendar" name="date" aria-label="calendar-date-selector">
+              <button class="submission-btn" type="submit">Submit</button>
+            </section>
+          </div>
           <label class="room-type-label">🛏  Select a Room:</label>
-          <select id="room-type-search" class="room-type-input" type="dropdown">
-            <option value="All">All</option>
+          <select id="roomTags-type-search" class="roomTags-type-input" type="dropdown" aria-label="room-type-dropdown">
+            <!-- <option value="All">All</option> -->
             <option value="suite">Suite</option>
-            <option value="residential-suite">Residential Suite</option>
-            <option value="junior-suite">Junior Suite</option>
-            <option value="single-room">Single</option>
+            <option value="residential suite">Residential Suite</option>
+            <option value="junior suite">Junior Suite</option>
+            <option value="single room">Single</option>
           <select/>  
+          <button class="submit-tag-view-btn" type="submit">Submit</button>
         </form>
       </section>
     </aside>  
-    <div class="bookings-div ">
+    <section class="customer-bookings-section">
         <div class="booking-title">
         <h3>Customer Bookings</h3>
         </div>
@@ -65,18 +69,18 @@
         <section class="bookings-card">
         </section>
       </section>
-    </div>
-    <div class="available-rooms-div hidden">
-      <div class="available-title">
-      <h3>Available Rooms</h3>
-      </div>
-    <section class="available-bookings">
-      <section class="available-rooms-card">
+    </section>
+    <section class="available-rooms-section">
+        <div class="available-title">
+        <h3>Available Rooms</h3>
+        </div>
+      <section class="available-bookings">
+        <section class="available-rooms-card">
+        </section>
       </section>
     </section>
-  </div>
+  </section>
 </main>
-  <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
 </body>
 </html>
