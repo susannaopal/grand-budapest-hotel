@@ -1,11 +1,10 @@
 /* This is an example of how to import a partial scss file*/
 @import '_variables';
-// @import '_resize';
 @import './_mixins';
 
-//overflow-y: auto;
 html {
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -23,36 +22,36 @@ body {
   display: display;
 }
 
-
 nav {
   background: $background-color;
-  height: 93px; 
-  align-items: flex-end;
-  flex-direction: row;
-  text-align: center;
+  margin: 0px;
+  width: 100%;
+  position:fixed;
+  height: 17%;
+  padding-top:0;
+  margin-bottom: 2%
 }
 
 h1 {
   text-align: center;
-}
-
-.top-btn-bar {
-  display: flex;
-  justify-content: center;
-}
-
-.return-bookings-view,
-.logout-btn,
-.submission-btn,
-.submit-tag-view-btn {
-  text-align: center;
-  cursor: pointer;
-  // outline: none;
+  margin-top:3%;
 }
 
 main {
   display: flex;
 }
+
+.return-bookings-view,
+.submission-btn,
+.submit-tag-view-btn {
+  text-align: center;
+  cursor: pointer;
+}
+
+.logout-btn{
+  margin-left: 38%;
+}
+
 
 /* ~~~~~ Log-in Page ~~~~~ */
 .user-login-section {
@@ -110,7 +109,7 @@ text-align: center;
   align-items: center;
   border: 0;
   margin-left: 8%;
-  margin-top: -6%
+  margin-top: 0;
 }
 
 .booking-title,
@@ -150,6 +149,7 @@ text-align: center;
   flex-direction: column;
   background-color: $background-color;
   margin-left: 4.5%;
+  margin-top: 6.5%;
   border: $border;
   height: fit-content;
 }
@@ -178,8 +178,6 @@ text-align: center;
   margin-left: 10%;
 }
 
-// .traveler-details,
-// .user-login-section,
 .welcome-customer-details,
 .past-bookings,
 .current-bookings,
@@ -189,17 +187,17 @@ text-align: center;
   border: $border;
 }
 
-.make-booking-btn 
-{
-  // height:50px;
-  // width:50px;
-  // text-align: center;
-  // display: flex;
-  // padding: 15px 32px;
-  // margin: 10px 10px 10px 10px;
-  // border-radius: 3%;
-  // box-shadow: 4px 3px 5px #073034;
-}
+// .make-booking-btn 
+// {
+//   // height:50px;
+//   // width:50px;
+//   // text-align: center;
+//   // display: flex;
+//   // padding: 15px 32px;
+//   // margin: 10px 10px 10px 10px;
+//   // border-radius: 3%;
+//   // box-shadow: 4px 3px 5px #073034;
+// }
 
 // /* ~~~~~ Log-in Page ~~~~~ */
 // .budapest-hotel-img {

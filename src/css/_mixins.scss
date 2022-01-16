@@ -5,25 +5,11 @@
     align-items: $alignItems;
   }
   
-  @mixin grid($grid-template-columns, $grid-auto-rows, $justify-content){
-    display: grid;
-    grid-template-columns: repeat(4, 150px);
-    grid-auto-rows: minmax(200px, auto);
-    justify-content: center;
-}
+  @mixin heightAndWidth($height, $width) {
+    height: $height;
+    width: $width;
+  }
 
-
-//   display: grid;
-//   grid-template-columns: repeat(4, 150px);
-//   grid-auto-rows: minmax(200px, auto);
-//   justify-content: center;
-
-
-//   @mixin heightAndWidth($height, $width) {
-//     height: $height;
-//     width: $width;
-//   }
-  
-//   @mixin fontSize($fontSize) {
-//     font-size: $fontSize;
-//   }
+  @mixin fontSize($fontSize) {
+    font-size: $fontSize;
+  }
