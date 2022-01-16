@@ -64,13 +64,15 @@ const domUpdates = {
       <p>Number of Beds: ${room.numBeds}</p>
       <p>Bed Size: ${room.bedSize}</p>
       <p>Cost Per Night: $${room.costPerNight}</p>
-      <button class="book-btn">Book This Room</button>
+      <button id=${room.number} class="book-btn">Book This Room</button>
       </article>`;
       availableRoomsSection.innerHTML += availRoomsCard;
     });
-  }
+    }
+//ADD an ID to the book button class?? target the id as the click 
 
-  
+    
+
 
  //event.target for the button to book the room (so it can know which room to book [every room needs to have ID aka room.number in domupdates const room card = article class / id (room.number) and event.target closest id])
 

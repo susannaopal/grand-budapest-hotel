@@ -42,15 +42,13 @@ export const PostNewBooking = (
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-  "userID": userId,
-  "date": date,
-  "roomNumber": roomNumber
-  })
-    .then((response) => response.json())
-    .catch((error) => console.log(error));
+      "userID": userID,
+      "date": date,
+      "roomNumber": roomNumber
+    })
+      .then((response) => response.json())
+      .catch((error) => console.log(error)),
+  });
 };
-}
-}
 
 //WILL NEED WITH SUCCESSFUL POSTING: { message: 'Booking with id <id> successfully posted', newBooking: <Object with trip info just posted> }
-

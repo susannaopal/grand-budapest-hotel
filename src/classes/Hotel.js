@@ -15,6 +15,7 @@ class Hotel {
     this.unavailableRooms;
     this.availableRooms;
     this.roomsByTag;
+    this.newBooking;
   }
 
   findCurrentCustomerBookings() {
@@ -59,9 +60,8 @@ class Hotel {
       }
     });
   }
-//make sure value of tags match room type
+
   filterSelectedRoomTypeOnly(tag) {
-    // console.log("selected room tag", tag)
     this.roomsByTag = [];
     const filteredRoomByTag = this.availableRooms.filter((room) => {
       if (room.roomType === tag) {
@@ -69,7 +69,31 @@ class Hotel {
       }
     });
   }
+
+  // makeNewBooking(booking) {
+  //   this.newBooking = [];
+  //   console.log("new", this.newBooking)
+  //   const makeBooking = this.availableRooms.forEach((room) => {
+  //     const roomToBook = this.bookings.find((booking) => {
+  //       if (booking.roomNumber === room.number) {
+  //         if (!roomToBook) {
+  //           this.newBooking.push({   
+  //             userID: booking.userID,
+  //             date: booking.date,
+  //             roomNumber: booking.roomNumber,
+              
+  //           });
+  //         }
+  //       }
+  //     });
+  //   })
+  //   console.log("is there a booking?")
+  //   return makeBooking;
+  // }
 }
+
+
+
 //figure out how to handle the all situation with a conditional 
 //maube run avail rooms again
 
