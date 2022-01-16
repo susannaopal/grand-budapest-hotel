@@ -22,9 +22,9 @@ class Hotel {
     let filteredBookings = this.bookings.filter((booking) => {
       return booking.userID === this.currentCustomer.id;
     }).sort((a, b) => {
-      if (a.date < b.date) { 
+      if (b.date < a.date) { 
         return - 1 
-      } if (a.date > b.date) { 
+      } if (b.date > a.date) { 
         return 1 
       } else { 
         return 0 };

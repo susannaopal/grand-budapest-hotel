@@ -124,6 +124,11 @@ describe('Hotel', () => {
   //   expect(hotel.findAvailableRooms()).to.equal('2022/04/22');
   // });
 
+  it('Should filter selection by room type', function() {
+    hotel.filterSelectedRoomTypeOnly()
+    expect(hotel.filterSelectedRoomTypeOnly().to.be.equal('residential suite'));
+  });
+
   //NEED A TEST FOR FILTERING BY ROOM!
 });
 
