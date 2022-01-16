@@ -33,8 +33,10 @@ nav {
 }
 
 h1 {
-  text-align: center;
-  margin-top:3%;
+  text-align: $center-text;
+  margin-top: 3%;
+  font-size: 2.5em;
+
 }
 
 main {
@@ -44,7 +46,7 @@ main {
 .return-bookings-view,
 .submission-btn,
 .submit-tag-view-btn {
-  text-align: center;
+  text-align: $center-text;
   cursor: pointer;
 }
 
@@ -57,7 +59,7 @@ main {
 .user-login-section {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: $center-text;
   position: absolute;
   top: 60%;
   background-color: black;
@@ -95,11 +97,11 @@ main {
 
 .first-name,
 .money-spent {
-text-align: center;
+text-align: $center-text;
 }
 
 .search-section {
-  text-align: center;
+  text-align: $center-text;
 }
 
 .customer-bookings-section,
@@ -160,7 +162,7 @@ text-align: center;
 
 .all-hotel-bookings-section {
   display: flex;
-  text-align: center;
+  text-align: $center-text;
   justify-content: flex-start;
   height: fit-content;
 
@@ -168,7 +170,7 @@ text-align: center;
 
 .new-booking-section {
  margin-top: 5%;
- text-align: center;
+ text-align: $center-text;
 }
 
 .past-stays,
@@ -186,18 +188,6 @@ text-align: center;
  {
   border: $border;
 }
-
-// .make-booking-btn 
-// {
-//   // height:50px;
-//   // width:50px;
-//   // text-align: center;
-//   // display: flex;
-//   // padding: 15px 32px;
-//   // margin: 10px 10px 10px 10px;
-//   // border-radius: 3%;
-//   // box-shadow: 4px 3px 5px #073034;
-// }
 
 // /* ~~~~~ Log-in Page ~~~~~ */
 // .budapest-hotel-img {
