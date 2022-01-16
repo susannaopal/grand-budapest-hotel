@@ -4,15 +4,13 @@ import Hotel from "./classes/Hotel";
 import Customer from "./classes/Customer";
 let hotel;
 let customer;
-// const calendarClick = document.querySelector('.available-rooms-input');
-// calendarClick.addEventListener('change', () => {
-//   console.log("change event")
-// })
+
 
 //mske a change event for drop down rooms for select a room (like above & see below)
 //To Do for bullet2: console log the date inside the addeventlistener (get specific date, whatever is being clicked on and comes from the event)
 //make a new function in the hotel class to filter by date and then hook that up to this
 
+const bookingBtnToPost = document.querySelector('.book-btn')
 
 const domUpdates = {
 
@@ -69,13 +67,8 @@ const domUpdates = {
       availableRoomsSection.innerHTML += availRoomsCard;
     });
     }
-//ADD an ID to the book button class?? target the id as the click 
-
-    
-
-
- //event.target for the button to book the room (so it can know which room to book [every room needs to have ID aka room.number in domupdates const room card = article class / id (room.number) and event.target closest id])
-
+//query selector for button above BUT exporting below and importing into scripts (posting function needs to be tied this)
 };
     
 export default domUpdates;
+export { bookingBtnToPost }

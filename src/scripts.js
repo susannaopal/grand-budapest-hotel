@@ -10,6 +10,7 @@ import { fetchAllCustomers, fetchSingleCustomer, fetchAllRooms, fetchAllBookings
 import './images/hotel-img.png'
 import './images/hotel-background.png'
 import dayjs from "dayjs";
+import { bookingBtnToPost } from './domUpdates';
 
 
 
@@ -71,11 +72,17 @@ const returnToHomePage = () => {
   domUpdates.addHidden([availRoomsViews]);
 };
 
+// const addNewBooking = () => {
+// apiCalls.postNewBooking(userID, date, roomNumber);
+// hotel.makeNewBooking(booking);
+// }
+
 //EVENT LISTENERS 
 window.addEventListener('load', loadApiData);
 submitBtn.addEventListener('click', findVacantRooms);
 tagSubmitBtn.addEventListener('click', findFilteredByTagsRooms);
-returnHomeBtn.addEventListener('click', returnToHomePage)
+returnHomeBtn.addEventListener('click', returnToHomePage);
+// bookingBtnToPost.addEventListener('click', addNewBooking)
 
 //NOTE FOR ME FOR THE FUTURE: use on change for a search ==> instead of hitting search as someone actively then fire change event listener everytime that change input changes
 

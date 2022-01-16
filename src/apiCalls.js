@@ -30,7 +30,7 @@ export const fetchAllBookings = () => {
 
 
 // POST REQUEST
-export const PostNewBooking = (
+export const postNewBooking = (
   userID,
   date,
   roomNumber
