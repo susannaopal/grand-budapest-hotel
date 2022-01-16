@@ -23,11 +23,12 @@ class Hotel {
       return booking.userID === this.currentCustomer.id;
     }).sort((a, b) => {
       if (a.date < b.date) { 
-        return - 1 
+        return - 1; 
       } if (a.date > b.date) { 
-        return 1 
+        return 1;
       } else { 
-        return 0 };
+        return 0;
+      }
     });
     this.currentCustomerBookings = filteredBookings; 
   }
@@ -50,15 +51,15 @@ class Hotel {
     const allFilteredBookings = this.bookings.filter((booking) => {
       if (booking.date === formattedDate) {
         this.unavailableRooms.push(booking.roomNumber)
-      }
+      } 
     });    
     this.rooms.forEach((room) => {
       if (this.unavailableRooms.includes(room.number)) {
         return; 
       } else {
         this.availableRooms.push(room);
-      }
-    });
+      } 
+    })
   }
 
   filterSelectedRoomTypeOnly(tag) {
@@ -70,28 +71,8 @@ class Hotel {
     });
   }
 
-  // makeNewBooking(booking) {
-  //   this.newBooking = [];
-  //   console.log("new", this.newBooking)
-  //   const makeBooking = this.availableRooms.forEach((room) => {
-  //     const roomToBook = this.bookings.find((booking) => {
-  //       if (booking.roomNumber === room.number) {
-  //         if (!roomToBook) {
-  //           this.newBooking.push({   
-  //             userID: booking.userID,
-  //             date: booking.date,
-  //             roomNumber: booking.roomNumber,
-              
-  //           });
-  //         }
-  //       }
-  //     });
-  //   })
-  //   console.log("is there a booking?")
-  //   return makeBooking;
-  // }
-}
 
+}
 
 
 //figure out how to handle the all situation with a conditional 

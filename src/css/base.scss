@@ -1,11 +1,10 @@
 /* This is an example of how to import a partial scss file*/
 @import '_variables';
-// @import '_resize';
 @import './_mixins';
 
-//overflow-y: auto;
 html {
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -15,50 +14,59 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  // background-repeat: no-repeat;
   background-size: cover;
+  
+}
+
+.logged-in-dashboard-section {
+  display: display;
 }
 
 nav {
-  background: black;
-  height: 93px; 
-  align-items: flex-end;
-  flex-direction: row;
-  text-align: center;
+  background: $background-color;
+  margin: 0px;
+  width: 100%;
+  position:fixed;
+  height: 17%;
+  padding-top:0;
+  margin-bottom: 2%
 }
 
-.top-btn-bar {
-  display: flex;
-  justify-content: space-between;
-}
-
-.return-bookings-view,
-.logout-btn,
-.submission-btn,
-.submit-tag-view-btn {
+h1 {
   text-align: center;
-  cursor: pointer;
-  outline: none;
-  // color: #fff;
-  border: none;
-  border-radius: 1px;
+  margin-top:3%;
 }
 
 main {
   display: flex;
 }
 
+.return-bookings-view,
+.submission-btn,
+.submit-tag-view-btn {
+  text-align: center;
+  cursor: pointer;
+}
+
+.logout-btn{
+  margin-left: 38%;
+}
+
+
 /* ~~~~~ Log-in Page ~~~~~ */
 .user-login-section {
-  font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
-  font-weight: bolder;
-  left: 30%;
-  top: 40%;
   text-align: center;
-  background-color: gray;
-}
+  position: absolute;
+  top: 60%;
+  background-color: black;
+  opacity: 0.9;
+  transform: translate(0, -50%);
+  border: 5px solid white;
+  padding: 10px;
+  margin-left: 29%
+};
 
 .budapest-hotel-img {
   display: block;
@@ -69,7 +77,6 @@ main {
 
 .login-form {
   color: $white-text;
-  margin-left: 15%
 }
 
 /* ~~~~~ Dashboard View ~~~~~ */
@@ -102,24 +109,28 @@ text-align: center;
   align-items: center;
   border: 0;
   margin-left: 8%;
-  margin-top: -6%
+  margin-top: 0;
 }
 
 .booking-title,
 .available-title {
   border: $border;
-  background-color: black;
+  background-color: $background-color;
+}
 
+.available-title {
+  display: flex;
+  flex-direction: column;
 }
 
 .all-hotel-bookings,
 .available-bookings {
-  width: 100%;
-  background-color: black;
-  border: 2px solid white;
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
+  background-color: $background-color;
+  border: $border;
   margin: 2% auto;
 }
 
@@ -136,10 +147,11 @@ text-align: center;
 .traveler-details-aside {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: $background-color;
   margin-left: 4.5%;
-  margin-bottom: 40%;
+  margin-top: 6.5%;
   border: $border;
+  height: fit-content;
 }
 
 .date-section-div{
@@ -150,6 +162,8 @@ text-align: center;
   display: flex;
   text-align: center;
   justify-content: flex-start;
+  height: fit-content;
+
 }
 
 .new-booking-section {
@@ -164,8 +178,6 @@ text-align: center;
   margin-left: 10%;
 }
 
-// .traveler-details,
-// .user-login-section,
 .welcome-customer-details,
 .past-bookings,
 .current-bookings,
@@ -175,15 +187,17 @@ text-align: center;
   border: $border;
 }
 
-.make-booking-btn 
-{
-  text-align: center;
-  display: flex;
-  padding: 15px 32px;
-  margin: 10px 10px 10px 10px;
-  border-radius: 3%;
-  box-shadow: 4px 3px 5px #073034;
-}
+// .make-booking-btn 
+// {
+//   // height:50px;
+//   // width:50px;
+//   // text-align: center;
+//   // display: flex;
+//   // padding: 15px 32px;
+//   // margin: 10px 10px 10px 10px;
+//   // border-radius: 3%;
+//   // box-shadow: 4px 3px 5px #073034;
+// }
 
 // /* ~~~~~ Log-in Page ~~~~~ */
 // .budapest-hotel-img {

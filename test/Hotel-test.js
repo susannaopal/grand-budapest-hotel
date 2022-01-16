@@ -10,6 +10,7 @@ describe('Hotel', () => {
   let roomData;
   let bookingData;
   let hotel2;
+  let futureRoomData;
   let currentCustomerData2;
   let roomData2;
   let bookingData2;
@@ -45,6 +46,29 @@ describe('Hotel', () => {
       'numBeds': 1,
       'costPerNight': 491.00
     }];
+  //     "number": 4,
+  //     "roomType": "single room",
+  //     "bidet": false,
+  //     "bedSize": "queen",
+  //     "numBeds": 1,
+  //     "costPerNight": 429.44
+  //   },  
+  //   {
+  //     "number": 12,
+  //     "roomType": "single room",
+  //     "bidet": false,
+  //     "bedSize": "twin",
+  //     "numBeds": 2,
+  //     "costPerNight": 172.09
+  //   },
+  //   {
+  //     "number": 6,
+  //     "roomType": "suite",
+  //     "bidet": false,
+  //     "bedSize": "queen",
+  //     "numBeds": 24,
+  //     "costPerNight": 372.24
+  //   }];
     bookingData = [{
       'id': "5fwrgu4i7k55hl6sz",
       'userID': 9,
@@ -65,14 +89,14 @@ describe('Hotel', () => {
       'date': "2020/01/10",
       'roomNumber': 12,
       'roomServiceCharges': [ ]
-    }];
+    }
+  ];
+   
     hotel = new Hotel(currentCustomerData, roomData, bookingData);
 
-    roomData2 = [{}];
+    roomData2 = [{undefined}];
     hotel2 = new Hotel(roomData);
-
-//params have to be in order of the class constructor
-
+    
   });
   
 
@@ -111,19 +135,30 @@ describe('Hotel', () => {
     expect(hotel2.currentCustomerBookings).to.deep.equal(undefined);
   });
   
-  it('Should be able to calculate the total cost of a customer booking', function() {
+  it('Should be able to calculate the total cost of a customer booking', () => {
     hotel.findCurrentCustomerBookings(9);
     hotel.findTotalSpentOnRooms();
     expect(hotel.findTotalSpentOnRooms()).to.equal(491.00);
   });
 
-  //NEED TO FIX THIS BROKEN TEST!
-  // it('Should be able to find available rooms for a customer', function() {
-  //   hotel.findAvailableRooms();
-  //   console.log("are you working")
-  //   expect(hotel.findAvailableRooms()).to.equal('2022/04/22');
-  // });
+  //BELOW TESTS ARE FAILING!!!!!//
+//   it("should be able to filter available rooms by date", () => {
+//     console.log("is anything even firing?")
+//     hotel.findAvailableRooms();
+//     expect(hotel.findAvailableRooms('22/02/01')).to.equal({
+//             "number": 4,
+//             "roomType": "single room",
+//             "bidet": false,
+//             "bedSize": "queen",
+//             "numBeds": 1,
+//             "costPerNight": 429.44
+//           });
 
-  //NEED A TEST FOR FILTERING BY ROOM!
+  // it('Should filter available selection by room type', function() {
+  //   expect(hotel.roomData).to.be.equal(undefined)
+  //   hotel.filterSelectedRoomTypeOnly('residential suite')
+  //   expect(hotel.roomData.to.be.equal('residential suite'));
+  // });
 });
+
 

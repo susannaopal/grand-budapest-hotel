@@ -1,3 +1,4 @@
+Html messed up
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +14,6 @@
 <body> 
   <nav>
     <h1>~Welcome to the Grand Budapest Hotel~</h1>
-    <div class="top-btn-bar">
-      <button class="return-bookings-view">Return Home</button>
-      <button class="logout-btn">Logout</button>
-    </div>
   </nav>
   <main>      
   <section class="user-login-section hidden">
@@ -36,6 +33,9 @@
       <div class= "welcome-customer-details">
         <h2 class="first-name" id="firstName">Welcome!</h2>
         <p class="money-spent"><p/>
+          <div class="top-btn-bar">
+            <button class="logout-btn">Logout</button>
+          </div>
       </div>
       <div class="new-booking-section">
         <p class="click-new">🗓 Make a new booking: 
@@ -47,6 +47,7 @@
               <label class="select-date-label" for="date">Select a Date:</label>
               <input class="available-rooms-input" type="date" id="calendar" name="date" aria-label="calendar-date-selector">
               <button class="submission-btn" type="submit">Submit</button>
+              <p class="calendar-error"></p>
             </section>
           </div>
           <label class="room-type-label">🛏  Select a Room:</label>
@@ -60,19 +61,20 @@
           <button class="submit-tag-view-btn" type="submit">Submit</button>
         </form>
       </section>
-    </aside>  
-    <section class="customer-bookings-section">
+      </aside>  
+      <section class="customer-bookings-section">
         <div class="booking-title">
         <h3>Customer Bookings</h3>
         </div>
-      <section class="all-hotel-bookings">
+        <section class="all-hotel-bookings">
         <section class="bookings-card">
         </section>
       </section>
-    </section>
-    <section class="available-rooms-section">
+      </section>
+      <section class="available-rooms-section hidden">
         <div class="available-title">
         <h3>Available Rooms</h3>
+        <button class="return-bookings-view">Return Home</button>
         </div>
       <section class="available-bookings">
         <section class="available-rooms-card">
@@ -84,3 +86,4 @@
   <script src="bundle.js"></script>
 </body>
 </html>
+
