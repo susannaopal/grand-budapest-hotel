@@ -28,11 +28,8 @@ let customer;
 let today = dayjs().format('YYYY-MM-DD');
 
 
-
 //FUNCTIONS
 const loadApiData = (id) => {
-  //skipping over allcustomers for now
-  //FETCH ALL CUST FOR USER LOGIN section (iteration3)
   Promise.all([fetchSingleCustomer(id), fetchAllCustomers(), fetchAllRooms(), fetchAllBookings()])
     .then(data => {
       customer = new Customer(data[0]);
@@ -76,12 +73,15 @@ const returnToHomePage = (event) => {
 };
 
 const addNewBooking = (event) => {
-  // event.preventDefault();
+  event.preventDefault();
   let selectedDate = document.getElementById("calendar").value;
   let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
   let roomNumber = parseInt(event.target.closest("article").id);
   postNewBooking(customer, formattedDate, roomNumber);
+  domUpdates.removeHidden(availRoomsViews);
+  domUpdates.addHidden(customerBookingsView);
 };
+
 
 const logIntoDashboard = (event) => {
   event.preventDefault();
@@ -97,16 +97,22 @@ const logIntoDashboard = (event) => {
   }
 };
 
+
 const logoutFromDashboard = () => {
   window.location.reload();
 }
 
+//overlook2021
 
-
+//to render updated info --> reinstatiate? 
+//how to show it without the posting duplicating
+//what is the way to update the $$$ (new function? new method?)
+//reloading API data or does reinstaitating do that?
+//where would I call this?
 //NEED TO FIGURE OUT:
+// --HOW TO REFRESH THE PAGE SO A USER KNOWS A BOOKING IS CREATED (currently cannot even see the DOM updating despite the posting in the console)
+// --Issue with the fact it is posting MULTIPLE Times but NOT rendering in the page or returning to the page if I try to add or hide that view
 // --HOW TO UPDATE THE DOM WITH $ ONCE A BOOK IS POSTED
-// --HOW TO REFRESH THE PAGE SO A USER KNOWS A BOOKING IS CREATED
-// -- HOW does the password connect to the api object of users array?
 
 
 //EVENT LISTENERS 

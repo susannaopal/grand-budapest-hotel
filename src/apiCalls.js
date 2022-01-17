@@ -46,7 +46,8 @@ export const postNewBooking = (
     }
   })
     .then((response) => response.json())
-    .then((response) => console.log("Posting Response:", response))
+    .then(data => console.log(data))
+    // .then((response) => console.log("Posting Response:", response))
     .catch((error) => console.log(error))
 };
 
