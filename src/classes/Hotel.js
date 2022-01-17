@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import dayjs from "dayjs";
+
 class Hotel {
   constructor(currentCustomerData, roomData, bookingData) {  
     this.rooms = roomData;
@@ -64,9 +64,7 @@ class Hotel {
       }
     });
   }
-
 }
-
 
 export default Hotel;
 

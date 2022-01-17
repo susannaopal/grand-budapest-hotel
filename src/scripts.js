@@ -97,37 +97,11 @@ const addNewBooking = (event) => {
   domUpdates.addHidden(availRoomsViews);
 };
 
-// const updateCustomerBookings = () => {
-//   let updatedInfo = addNewBooking();
-//   updatedInfo.forEach((booking) => {
-//     postNewBooking(customer, formattedDate, roomNumber).then
-//     (result => console.log(result))
-//   }) 
-
-// }
-
-
-
-
 const logoutFromDashboard = () => {
   window.location.reload();
 }
 
-//overlook2021
-
-//to render updated info --> reinstatiate? 
-//how to show it without the posting duplicating
-//what is the way to update the $$$ (new function? new method?)
-//reloading API data or does reinstaitating do that?
-//where would I call this?
-//NEED TO FIGURE OUT:
-// --HOW TO REFRESH THE PAGE SO A USER KNOWS A BOOKING IS CREATED (currently cannot even see the DOM updating despite the posting in the console)
-// --Issue with the fact it is posting MULTIPLE Times but NOT rendering in the page or returning to the page if I try to add or hide that view
-// --HOW TO UPDATE THE DOM WITH $ ONCE A BOOK IS POSTED
-
-
 //EVENT LISTENERS 
-// window.addEventListener('load', loadApiData);
 submitBtn.addEventListener('click', findVacantRooms);
 tagSubmitBtn.addEventListener('click', findFilteredByTagsRooms);
 returnHomeBtn.addEventListener('click', returnToHomePage);
