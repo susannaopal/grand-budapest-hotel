@@ -41,7 +41,7 @@ const loadApiData = (id) => {
 };
 
 const loadCustomer = (customer) => {
-  domUpdates.greetCustomerByName(customer);
+  domUpdates.greetCustomerByName(customer.name);
   hotel.findCurrentCustomerBookings();
   domUpdates.displayCurrentCustomerBookings(hotel.currentCustomerBookings);
   domUpdates.displayTotalSpent(hotel);
@@ -72,17 +72,6 @@ const returnToHomePage = (event) => {
   domUpdates.addHidden(availRoomsViews);
 };
 
-const addNewBooking = (event) => {
-  event.preventDefault();
-  let selectedDate = document.getElementById("calendar").value;
-  let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
-  let roomNumber = parseInt(event.target.closest("article").id);
-  postNewBooking(customer, formattedDate, roomNumber);
-  domUpdates.removeHidden(availRoomsViews);
-  domUpdates.addHidden(customerBookingsView);
-};
-
-
 const logIntoDashboard = (event) => {
   event.preventDefault();
   let usernameInput = document.getElementById('usernameInput').value;
@@ -96,6 +85,28 @@ const logIntoDashboard = (event) => {
     return domUpdates.removeHidden(loginError);
   }
 };
+
+const addNewBooking = (event) => {
+  event.preventDefault();
+  let selectedDate = document.getElementById("calendar").value;
+  let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
+  let roomNumber = parseInt(event.target.closest("article").id);
+  postNewBooking(customer, formattedDate, roomNumber);
+  loadApiData(customer.id);
+  domUpdates.removeHidden(customerBookingsView);
+  domUpdates.addHidden(availRoomsViews);
+};
+
+// const updateCustomerBookings = () => {
+//   let updatedInfo = addNewBooking();
+//   updatedInfo.forEach((booking) => {
+//     postNewBooking(customer, formattedDate, roomNumber).then
+//     (result => console.log(result))
+//   }) 
+
+// }
+
+
 
 
 const logoutFromDashboard = () => {
