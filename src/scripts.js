@@ -1,4 +1,4 @@
-  /* eslint-disable max-len */
+/* eslint-disable max-len */
 
 //IMPORTED FILES
 import './css/base.scss';
@@ -17,7 +17,7 @@ const tagSubmitBtn = document.querySelector('.submit-tag-view-btn');
 const returnHomeBtn = document.querySelector('.return-bookings-view');
 const bookAvailRoomCard = document.querySelector('.available-rooms-card')
 const loginSubmissionBtn = document.querySelector('#logInButton');
-// const logoutBtn = document.querySelector('#logoutBtn');
+const logoutBtn = document.querySelector('#logoutBtn');
 const loginError = document.querySelector('.login-error-msg');
 const loginView = document.querySelector('.user-login-section');
 const dashboardView = document.querySelector('.dashboard-view-section')
@@ -85,34 +85,21 @@ const addNewBooking = (event) => {
 
 const logIntoDashboard = (event) => {
   event.preventDefault();
-let usernameInput = document.getElementById('usernameInput').value;
-let passwordInput = document.getElementById('passwordInput').value;
-let  charNine = [usernameInput.charAt(8)]; 
-let charTen = [usernameInput.charAt(9)]; 
-let loginNumber = `${charNine}${charTen}`;
-if (usernameInput === 'customer' && parseInt(loginNumber) > 0 && parseInt(loginNumber) <= 50 && passwordInput === "overlook2021") {
-  loadApiData(loginNumber);
-} else {
-  return domUpdates.removeHidden(loginError);
-}
+  let usernameInput = document.getElementById('usernameInput').value;
+  let passwordInput = document.getElementById('passwordInput').value;
+  let  charNine = [usernameInput.charAt(8)];
+  let charTen = [usernameInput.charAt(9)]; 
+  let loginNumber = `${charNine}${charTen}`;
+  if (parseInt(loginNumber) > 0 && parseInt(loginNumber) <= 50 && passwordInput === "overlook2021") {
+    loadApiData(loginNumber);
+  } else {
+    return domUpdates.removeHidden(loginError);
+  }
+};
 
-}
-
-
-
-// if (!usernameInput.value || !passwordInput.value) {
-  //check this & if either are wrong then return an error msg??
-// } else if {
-//  both inputs are correct then can login correctly to that
-//specific users dashboard?
-
-//how to isolate the # part of the username 
-//check to see if 
-
-// username: customer50 (where 50 is the ID of the user)
-// if passwordInput doesn't === password: overlook2021 then throw an error (the password is already a string)
-
-//ADD/HIDE view screen
+const logoutFromDashboard = () => {
+  window.location.reload();
+};
 
 
 
@@ -129,7 +116,7 @@ tagSubmitBtn.addEventListener('click', findFilteredByTagsRooms);
 returnHomeBtn.addEventListener('click', returnToHomePage);
 bookAvailRoomCard.addEventListener('click', addNewBooking);
 loginSubmissionBtn.addEventListener('click', logIntoDashboard)
-// logoutBtn.addEventListener('click', logoutFromDashboard)
+logoutBtn.addEventListener('click', logoutFromDashboard)
 
 
 
