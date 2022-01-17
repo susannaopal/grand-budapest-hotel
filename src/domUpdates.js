@@ -2,12 +2,12 @@
 
 const domUpdates = {
 
-  addHidden(elements) {
+  addHidden(...elements) {
     elements.forEach(item => {
       item.classList.add("hidden");
     });
   },
-  removeHidden(elements) {
+  removeHidden(...elements) {
     elements.forEach(item => {
       item.classList.remove("hidden");
     });
@@ -61,10 +61,11 @@ const domUpdates = {
       let availableRoomsSection = document.querySelector('.available-rooms-card');
       availableRoomsSection.innerHTML = '';
       const availRoomsCard =
-    `<p>We are so sorry, but we don't have any availablity for that room type on this date, please make another selection!</p>` ;
+    `<p>We are so sorry, but we do not have any availablity for that room type on that date. Please make another selection!</p>` ;
       availableRoomsSection.innerHTML += availRoomsCard;
     }
   }
+
 };
 
     
