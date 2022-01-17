@@ -1,5 +1,4 @@
- /* eslint-disable max-len */
-
+/* eslint-disable max-len */
 import { expect } from "chai";
 import Hotel from '../src/classes/Hotel';
 import Customer from '../src/classes/Customer';
@@ -46,29 +45,29 @@ describe('Hotel', () => {
       'numBeds': 1,
       'costPerNight': 491.00
     }];
-  //     "number": 4,
-  //     "roomType": "single room",
-  //     "bidet": false,
-  //     "bedSize": "queen",
-  //     "numBeds": 1,
-  //     "costPerNight": 429.44
-  //   },  
-  //   {
-  //     "number": 12,
-  //     "roomType": "single room",
-  //     "bidet": false,
-  //     "bedSize": "twin",
-  //     "numBeds": 2,
-  //     "costPerNight": 172.09
-  //   },
-  //   {
-  //     "number": 6,
-  //     "roomType": "suite",
-  //     "bidet": false,
-  //     "bedSize": "queen",
-  //     "numBeds": 24,
-  //     "costPerNight": 372.24
-  //   }];
+    //     "number": 4,
+    //     "roomType": "single room",
+    //     "bidet": false,
+    //     "bedSize": "queen",
+    //     "numBeds": 1,
+    //     "costPerNight": 429.44
+    //   },  
+    //   {
+    //     "number": 12,
+    //     "roomType": "single room",
+    //     "bidet": false,
+    //     "bedSize": "twin",
+    //     "numBeds": 2,
+    //     "costPerNight": 172.09
+    //   },
+    //   {
+    //     "number": 6,
+    //     "roomType": "suite",
+    //     "bidet": false,
+    //     "bedSize": "queen",
+    //     "numBeds": 24,
+    //     "costPerNight": 372.24
+    //   }];
     bookingData = [{
       'id': "5fwrgu4i7k55hl6sz",
       'userID': 9,
@@ -90,7 +89,7 @@ describe('Hotel', () => {
       'roomNumber': 12,
       'roomServiceCharges': [ ]
     }
-  ];
+    ];
    
     hotel = new Hotel(currentCustomerData, roomData, bookingData);
 
@@ -142,17 +141,17 @@ describe('Hotel', () => {
   });
 
   //BELOW TESTS ARE FAILING!!!!!//
-//   it("should be able to filter available rooms by date", () => {
-//     console.log("is anything even firing?")
-//     hotel.findAvailableRooms();
-//     expect(hotel.findAvailableRooms('22/02/01')).to.equal({
-//             "number": 4,
-//             "roomType": "single room",
-//             "bidet": false,
-//             "bedSize": "queen",
-//             "numBeds": 1,
-//             "costPerNight": 429.44
-//           });
+  //   it("should be able to filter available rooms by date", () => {
+  //     console.log("is anything even firing?")
+  //     hotel.findAvailableRooms();
+  //     expect(hotel.findAvailableRooms('22/02/01')).to.equal({
+  //             "number": 4,
+  //             "roomType": "single room",
+  //             "bidet": false,
+  //             "bedSize": "queen",
+  //             "numBeds": 1,
+  //             "costPerNight": 429.44
+  //           });
 
   // it('Should filter available selection by room type', function() {
   //   expect(hotel.roomData).to.be.equal(undefined)

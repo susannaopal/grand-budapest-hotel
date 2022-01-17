@@ -10,7 +10,6 @@ class Hotel {
     this.unavailableRooms;
     this.availableRooms;
     this.roomsByTag;
-    this.newBooking;
   }
 
   findCurrentCustomerBookings() {
@@ -18,11 +17,12 @@ class Hotel {
       return booking.userID === this.currentCustomer.id;
     }).sort((a, b) => {
       if (b.date < a.date) { 
-        return - 1 
+        return - 1; 
       } if (b.date > a.date) { 
-        return 1 
+        return 1;
       } else { 
-        return 0 };
+        return 0; 
+      }
     });
     this.currentCustomerBookings = filteredBookings; 
   }
