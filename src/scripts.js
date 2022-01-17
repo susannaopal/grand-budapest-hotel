@@ -75,13 +75,14 @@ const returnToHomePage = (event) => {
   domUpdates.addHidden(availRoomsViews);
 };
 
-const addNewBooking = (event) => {
-  event.preventDefault();
+const addNewBooking = () => {
   let selectedDate = document.getElementById("calendar").value;
   let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
   let roomNumber = parseInt(event.target.closest("article").id);
   postNewBooking(customer, formattedDate, roomNumber);
 };
+
+
 
 const logIntoDashboard = (event) => {
   event.preventDefault();
