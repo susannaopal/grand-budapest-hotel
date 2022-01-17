@@ -65,6 +65,7 @@ const domUpdates = {
       availableRoomsSection.innerHTML += availRoomsCard;
     }
   }
+
 };
 
     
