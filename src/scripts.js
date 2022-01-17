@@ -90,7 +90,7 @@ let passwordInput = document.getElementById('passwordInput').value;
 let  charNine = [usernameInput.charAt(8)]; 
 let charTen = [usernameInput.charAt(9)]; 
 let loginNumber = `${charNine}${charTen}`;
-if (parseInt(loginNumber) > 0 && parseInt(loginNumber) <= 50 && passwordInput === "overlook2021") {
+if (usernameInput === 'customer' && parseInt(loginNumber) > 0 && parseInt(loginNumber) <= 50 && passwordInput === "overlook2021") {
   loadApiData(loginNumber);
 } else {
   return domUpdates.removeHidden(loginError);
