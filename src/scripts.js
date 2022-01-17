@@ -75,14 +75,13 @@ const returnToHomePage = (event) => {
   domUpdates.addHidden(availRoomsViews);
 };
 
-const addNewBooking = () => {
+const addNewBooking = (event) => {
+  // event.preventDefault();
   let selectedDate = document.getElementById("calendar").value;
   let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
   let roomNumber = parseInt(event.target.closest("article").id);
   postNewBooking(customer, formattedDate, roomNumber);
 };
-
-
 
 const logIntoDashboard = (event) => {
   event.preventDefault();
@@ -100,7 +99,7 @@ const logIntoDashboard = (event) => {
 
 const logoutFromDashboard = () => {
   window.location.reload();
-};
+}
 
 
 
@@ -118,6 +117,9 @@ returnHomeBtn.addEventListener('click', returnToHomePage);
 bookAvailRoomCard.addEventListener('click', addNewBooking);
 loginSubmissionBtn.addEventListener('click', logIntoDashboard)
 logoutBtn.addEventListener('click', logoutFromDashboard)
+
+
+
 
 
 
