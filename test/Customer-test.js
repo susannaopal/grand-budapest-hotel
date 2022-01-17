@@ -40,13 +40,7 @@ describe('Customer', () => {
   it('Should have a name', () => {
     expect(customer.name).to.equal('Leatha Ullrich');
     expect(customer2.name).to.equal('');
-
-  });
-
-  it("should have a first name", () => {
-    expect(customer.getCustomerName()).to.equal('Leatha');
-    expect(customer2.getCustomerName()).to.equal('');
-
+    expect(customer3.name).to.equal('Kelvin Schiller');
   });
 });
 
