@@ -93,7 +93,7 @@ let loginNumber = `${charNine}${charTen}`;
 if (parseInt(loginNumber) > 0 && parseInt(loginNumber) <= 50 && passwordInput === "overlook2021") {
   loadApiData(loginNumber);
 } else {
-  return domUpdates.removeHidden([loginError]);
+  return domUpdates.removeHidden(loginError);
 }
 
 }
