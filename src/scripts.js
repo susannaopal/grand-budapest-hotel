@@ -1,4 +1,4 @@
-  /* eslint-disable max-len */
+/* eslint-disable max-len */
 
 //IMPORTED FILES
 import './css/base.scss';
@@ -17,7 +17,7 @@ const tagSubmitBtn = document.querySelector('.submit-tag-view-btn');
 const returnHomeBtn = document.querySelector('.return-bookings-view');
 const bookAvailRoomCard = document.querySelector('.available-rooms-card')
 const loginSubmissionBtn = document.querySelector('#logInButton');
-// const logoutBtn = document.querySelector('#logoutBtn');
+const logoutBtn = document.querySelector('#logoutBtn');
 const loginError = document.querySelector('.login-error-msg');
 const loginView = document.querySelector('.user-login-section');
 const dashboardView = document.querySelector('.dashboard-view-section')
@@ -28,11 +28,8 @@ let customer;
 let today = dayjs().format('YYYY-MM-DD');
 
 
-
 //FUNCTIONS
 const loadApiData = (id) => {
-  //skipping over allcustomers for now
-  //FETCH ALL CUST FOR USER LOGIN section (iteration3)
   Promise.all([fetchSingleCustomer(id), fetchAllCustomers(), fetchAllRooms(), fetchAllBookings()])
     .then(data => {
       customer = new Customer(data[0]);
@@ -44,7 +41,7 @@ const loadApiData = (id) => {
 };
 
 const loadCustomer = (customer) => {
-  domUpdates.greetCustomerByName(customer);
+  domUpdates.greetCustomerByName(customer.name);
   hotel.findCurrentCustomerBookings();
   domUpdates.displayCurrentCustomerBookings(hotel.currentCustomerBookings);
   domUpdates.displayTotalSpent(hotel);
@@ -75,51 +72,58 @@ const returnToHomePage = (event) => {
   domUpdates.addHidden(availRoomsViews);
 };
 
+const logIntoDashboard = (event) => {
+  event.preventDefault();
+  let usernameInput = document.getElementById('usernameInput').value;
+  let passwordInput = document.getElementById('passwordInput').value;
+  let  charNine = [usernameInput.charAt(8)];
+  let charTen = [usernameInput.charAt(9)]; 
+  let loginNumber = `${charNine}${charTen}`;
+  if (parseInt(loginNumber) > 0 && parseInt(loginNumber) <= 50 && passwordInput === "overlook2021") {
+    loadApiData(loginNumber);
+  } else {
+    return domUpdates.removeHidden(loginError);
+  }
+};
+
 const addNewBooking = (event) => {
   event.preventDefault();
   let selectedDate = document.getElementById("calendar").value;
   let formattedDate = dayjs(selectedDate).format('YYYY/MM/DD');
   let roomNumber = parseInt(event.target.closest("article").id);
   postNewBooking(customer, formattedDate, roomNumber);
+  loadApiData(customer.id);
+  domUpdates.removeHidden(customerBookingsView);
+  domUpdates.addHidden(availRoomsViews);
 };
 
-const logIntoDashboard = (event) => {
-  event.preventDefault();
-let usernameInput = document.getElementById('usernameInput').value;
-let passwordInput = document.getElementById('passwordInput').value;
-let  charNine = [usernameInput.charAt(8)]; 
-let charTen = [usernameInput.charAt(9)]; 
-let loginNumber = `${charNine}${charTen}`;
-if (parseInt(loginNumber) > 0 && parseInt(loginNumber) <= 50 && passwordInput === "overlook2021") {
-  loadApiData(loginNumber);
-} else {
-  return domUpdates.removeHidden([loginError]);
+// const updateCustomerBookings = () => {
+//   let updatedInfo = addNewBooking();
+//   updatedInfo.forEach((booking) => {
+//     postNewBooking(customer, formattedDate, roomNumber).then
+//     (result => console.log(result))
+//   }) 
+
+// }
+
+
+
+
+const logoutFromDashboard = () => {
+  window.location.reload();
 }
 
-}
+//overlook2021
 
-
-
-// if (!usernameInput.value || !passwordInput.value) {
-  //check this & if either are wrong then return an error msg??
-// } else if {
-//  both inputs are correct then can login correctly to that
-//specific users dashboard?
-
-//how to isolate the # part of the username 
-//check to see if 
-
-// username: customer50 (where 50 is the ID of the user)
-// if passwordInput doesn't === password: overlook2021 then throw an error (the password is already a string)
-
-//ADD/HIDE view screen
-
-
-
+//to render updated info --> reinstatiate? 
+//how to show it without the posting duplicating
+//what is the way to update the $$$ (new function? new method?)
+//reloading API data or does reinstaitating do that?
+//where would I call this?
 //NEED TO FIGURE OUT:
+// --HOW TO REFRESH THE PAGE SO A USER KNOWS A BOOKING IS CREATED (currently cannot even see the DOM updating despite the posting in the console)
+// --Issue with the fact it is posting MULTIPLE Times but NOT rendering in the page or returning to the page if I try to add or hide that view
 // --HOW TO UPDATE THE DOM WITH $ ONCE A BOOK IS POSTED
-// --HOW TO REFRESH THE PAGE SO A USER KNOWS A BOOKING IS CREATED
-// -- HOW does the password connect to the api object of users array?
 
 
 //EVENT LISTENERS 
@@ -129,7 +133,10 @@ tagSubmitBtn.addEventListener('click', findFilteredByTagsRooms);
 returnHomeBtn.addEventListener('click', returnToHomePage);
 bookAvailRoomCard.addEventListener('click', addNewBooking);
 loginSubmissionBtn.addEventListener('click', logIntoDashboard)
-// logoutBtn.addEventListener('click', logoutFromDashboard)
+logoutBtn.addEventListener('click', logoutFromDashboard)
+
+
+
 
 
 

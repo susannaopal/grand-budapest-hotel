@@ -15,7 +15,7 @@ const domUpdates = {
 
   greetCustomerByName(customer) {
     let greetCustomer = document.querySelector('#firstName');
-    greetCustomer.innerText = `Welcome, ${customer.getCustomerName()}!`;
+    greetCustomer.innerText = `Welcome, ${customer}!`;
   },
   
   displayCurrentCustomerBookings(currentCustomerBookings) {
@@ -35,7 +35,7 @@ const domUpdates = {
   displayTotalSpent(hotel) {
     let amount = hotel.findTotalSpentOnRooms();
     let totalMoneySpent = document.querySelector('.money-spent');
-    totalMoneySpent.innerText += `You have spent $${amount} 💵`;
+    totalMoneySpent.innerText = `You have spent $${amount} 💵`;
   },
 
   displayAllAvailableRooms(allAvailableRooms) {
@@ -61,7 +61,7 @@ const domUpdates = {
       let availableRoomsSection = document.querySelector('.available-rooms-card');
       availableRoomsSection.innerHTML = '';
       const availRoomsCard =
-    `<p>We are so sorry, but we do not have any availablity for that room type on that date. Please make another selection!</p>` ;
+    `<p>We are so sorry, but we do not have any availablity for that room type on this date. Please make another selection!</p>`;
       availableRoomsSection.innerHTML += availRoomsCard;
     }
   }
