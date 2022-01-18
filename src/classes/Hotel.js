@@ -42,9 +42,9 @@ class Hotel {
   findAvailableRooms(formattedDate) {
     this.unavailableRooms = [];
     this.availableRooms = [];
-    const allFilteredBookings = this.bookings.filter((booking) => {
+    this.bookings.filter((booking) => {
       if (booking.date === formattedDate) {
-        this.unavailableRooms.push(booking.roomNumber)
+        this.unavailableRooms.push(booking.roomNumber);
       }
     });    
     this.rooms.forEach((room) => {
@@ -58,7 +58,7 @@ class Hotel {
 
   filterSelectedRoomTypeOnly(tag) {
     this.roomsByTag = [];
-    const filteredRoomByTag = this.availableRooms.filter((room) => {
+    this.availableRooms.filter((room) => {
       if (room.roomType === tag) {
         this.roomsByTag.push(room);
       }

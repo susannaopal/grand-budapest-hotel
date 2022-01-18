@@ -41,6 +41,14 @@ describe('Hotel', () => {
       'bedSize': "king",
       'numBeds': 1,
       'costPerNight': 491.00
+    },
+    {
+      'number': 4,
+      'roomType': "single room",
+      'bidet': false,
+      'bedSize': "king",
+      'numBeds': 1,
+      'costPerNight': 491.00
     }];
     bookingData = [{
       'id': "5fwrgu4i7k55hl6sz",
@@ -112,43 +120,37 @@ describe('Hotel', () => {
     expect(hotel.findTotalSpentOnRooms()).to.equal(491.00);
   });
 
-  // //BELOW TESTS ARE FAILING!!!!!//
-  // it("should be able to filter available rooms by date", () => {
-  //   console.log(hotel.findAvailableRooms("2020/04/22"))
-  //   // let availableRooms = hotel.findAvailableRooms("2020/04/22")
-  //   // expect(availableRooms.length).to.be.equal(0);
-  //   // expect(hotel.bookings).to.be.equal(roomData, bookingData, "2020/04/22")
-  //   // hotel.findAvailableRooms(roomData.roomType)
-  //   expect(hotel.findAvailableRooms("2020/04/22")).to.deep.equal( 
-  //     roomData = [{
-  //       'number': 1,
-  //       'roomType': "residential suite",
-  //       'bidet': true,
-  //       'bedSize': "queen",
-  //       'numBeds': 1,
-  //       'costPerNight': 358.4
-  //     },
-  //     {
-  //       'number': 2,
-  //       'roomType': "suite",
-  //       'bidet': false,
-  //       'bedSize': "full",
-  //       'numBeds': 2,
-  //       'costPerNight': 477.38
-  //     },
-  //     {
-  //       'number': 15,
-  //       'roomType': "single room",
-  //       'bidet': false,
-  //       'bedSize': "king",
-  //       'numBeds': 1,
-  //       'costPerNight': 491.00
-  //     }]);
+  it('Should be able to select rooms by date availablity', () => {
+    hotel.findAvailableRooms("2020/01/10");
+    expect(hotel.unavailableRooms).to.be.a('array');
+    console.log(hotel.unavailableRooms)
+    expect(hotel.unavailableRooms.length).to.equal(1);
+    expect(hotel.unavailableRooms).to.deep.equal([12])
+  });
 
-  // it('Should filter available selection by room type', function() {
-  //   expect(hotel.roomData).to.be.equal(undefined)
-  //   hotel.filterSelectedRoomTypeOnly('residential suite')
-  //   expect(hotel.roomData.to.be.equal('residential suite'));
-  // });
-  // });
+  it('Should be able to select rooms by room type', () => {
+    hotel.findAvailableRooms("2020/01/10");
+    hotel.filterSelectedRoomTypeOnly('single room');
+    expect(hotel.roomsByTag).to.be.a('array');
+    expect(hotel.roomsByTag.length).to.equal(2);
+    expect(hotel.roomsByTag).to.deep.equal([
+      {
+        number: 15,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'king',
+        numBeds: 1,
+        costPerNight: 491
+      },
+      {
+        number: 4,
+        roomType: 'single room',
+        bidet: false,
+        bedSize: 'king',
+        numBeds: 1,
+        costPerNight: 491
+      }
+    ]);
+  });
 });
+
