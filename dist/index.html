@@ -1,4 +1,3 @@
-Html messed up
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,7 @@ Html messed up
     <h1>~Welcome to the Grand Budapest Hotel~</h1>
   </nav>
   <main>      
-  <section class="user-login-section ">
+  <section id= "userLoginSection" class="user-login-section ">
     <div class="login-form">
       <p>👇 Please login to access your hotel reservations: 👇</p>
       <form class="container" id'"loginForm">
@@ -25,11 +24,11 @@ Html messed up
         <label for="user-password"><b>Password:</b></label>
         <input id="passwordInput" type="password" placeholder="Enter Password" name="password-user" required>
         <button class="login-btn" id="logInButton" type="submit">Login</button>
-        <p class="login-error-msg hidden">Invalid login credentials, please try again!</p>
+        <p id="errorMsg" class="login-error-msg hidden">Invalid login credentials, please try again!</p>
       </form>
     </div>
   </section>
-  <section class="dashboard-view-section hidden">
+  <section id="dashboardViewSection" class="dashboard-view-section hidden">
     <aside class="traveler-details-aside">
       <div class= "welcome-customer-details">
         <h2 class="first-name" id="firstName">Welcome!</h2>
@@ -47,7 +46,7 @@ Html messed up
             <section class="search-section">
               <label class="select-date-label">Select a Date:</label>
               <input class="available-rooms-input" label="calendar-date-selector" type="date" id="calendar" name="date" aria-label="calendar-date-selector">
-              <button class="submission-btn" type="submit">Submit</button>
+              <button class="submission-btn" id="submBtn" type="submit">Submit</button>
             </section>
           </div>
           <label class="room-type-label">🛏  Select a Room:</label>
@@ -57,11 +56,11 @@ Html messed up
             <option value="junior suite">Junior Suite</option>
             <option value="single room">Single</option>
           <select/>  
-          <button class="submit-tag-view-btn" type="submit">Submit</button>
+          <button id="submitTagBtn" class="submit-tag-view-btn" type="submit">Submit</button>
         </form>
       </section>
       </aside>  
-      <section class="customer-bookings-section">
+      <section id="customerBkgSection" class="customer-bookings-section">
         <div class="booking-title">
         <h3>Customer Bookings</h3>
         </div>
@@ -70,13 +69,13 @@ Html messed up
         </section>
       </section>
       </section>
-      <section class="available-rooms-section hidden">
+      <section id="availRoomsSection" class="available-rooms-section hidden">
         <div class="available-title">
         <h3>Available Rooms</h3>
-        <button class="return-bookings-view">Return Home</button>
+        <button id="returnBkgsView" class="return-bookings-view">Return Home</button>
         </div>
       <section class="available-bookings">
-        <section class="available-rooms-card">
+        <section id="availRoomsCard" class="available-rooms-card">
         </div>
         </section>
       </section>
@@ -86,4 +85,3 @@ Html messed up
   <script src="bundle.js"></script>
 </body>
 </html>
-
