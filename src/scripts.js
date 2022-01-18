@@ -6,7 +6,7 @@ import Hotel from './classes/Hotel';
 import Customer from './classes/Customer';
 import domUpdates from './domUpdates';
 import { fetchAllCustomers, fetchSingleCustomer, fetchAllRooms, fetchAllBookings, postNewBooking } from './apiCalls';
-import './images/hotel-img.png'
+import './images/hotel-img.png';
 import dayjs from "dayjs";
 
 //QUERY SELECTORS
@@ -15,12 +15,12 @@ const customerBookingsView = document.querySelector('.customer-bookings-section'
 const availRoomsViews = document.querySelector('.available-rooms-section');
 const tagSubmitBtn = document.querySelector('.submit-tag-view-btn');
 const returnHomeBtn = document.querySelector('.return-bookings-view');
-const bookAvailRoomCard = document.querySelector('.available-rooms-card')
+const bookAvailRoomCard = document.querySelector('.available-rooms-card');
 const loginSubmissionBtn = document.querySelector('#logInButton');
 const logoutBtn = document.querySelector('#logoutBtn');
 const loginError = document.querySelector('.login-error-msg');
 const loginView = document.querySelector('.user-login-section');
-const dashboardView = document.querySelector('.dashboard-view-section')
+const dashboardView = document.querySelector('.dashboard-view-section');
 
 //GLOBAL VARIABLES
 let hotel;
@@ -37,7 +37,7 @@ const loadApiData = (id) => {
       loadCustomer(customer);
       document.getElementById("calendar").setAttribute("min", today);
       document.getElementById("calendar").setAttribute("value", today);
-    });
+    }).catch(error => console.log(error));
 };
 
 const loadCustomer = (customer) => {

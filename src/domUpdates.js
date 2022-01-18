@@ -7,6 +7,7 @@ const domUpdates = {
       item.classList.add("hidden");
     });
   },
+  
   removeHidden(...elements) {
     elements.forEach(item => {
       item.classList.remove("hidden");
@@ -65,7 +66,6 @@ const domUpdates = {
       availableRoomsSection.innerHTML += availRoomsCard;
     }
   }
-
 };
 
     

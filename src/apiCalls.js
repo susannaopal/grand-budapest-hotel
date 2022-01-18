@@ -37,8 +37,8 @@ export const postNewBooking = (
     method: "POST",
     body: JSON.stringify({
       userID: user.id,
-      date: date,
-      roomNumber: roomNumber
+      date,
+      roomNumber
     }),
     headers: {
       Accept: "application/json",

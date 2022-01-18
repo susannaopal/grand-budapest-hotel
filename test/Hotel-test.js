@@ -9,10 +9,7 @@ describe('Hotel', () => {
   let bookingData;
   let hotel2;
 
-
-
-  beforeEach(function() {
-   
+  beforeEach(function() {   
     currentCustomerData = {
       id: 9,
       name: 'Joe Placid',
@@ -70,13 +67,11 @@ describe('Hotel', () => {
       'roomNumber': 12,
       'roomServiceCharges': [ ]
     }];
-   
+  
     hotel = new Hotel(currentCustomerData, roomData, bookingData);
     hotel2 = new Hotel([]);
-    
   });
   
-
   it('Should be a function', () => {
     expect(Hotel).to.be.a('function');
   });
@@ -117,7 +112,6 @@ describe('Hotel', () => {
     expect(hotel2.currentCustomerBookings).to.be.equal(undefined);
     hotel.findCurrentCustomerBookings()
     expect(hotel2.currentCustomerBookings).to.deep.equal(undefined);
-    
   });
   
   it('Should be able to calculate the total cost of a customer booking', () => {

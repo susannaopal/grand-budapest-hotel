@@ -1,12 +1,10 @@
 import { expect } from "chai";
 import Customer from '../src/classes/Customer';
 
-
 describe('Customer', () => {
   let customer;
   let customer2;
   let customer3;
-
 
   beforeEach(function () {
     customer = new Customer({
@@ -21,7 +19,6 @@ describe('Customer', () => {
       'id': '',
       'name': 'Kelvin Schiller'
     });
-
   });
     
   it('Should be a function', () => {
