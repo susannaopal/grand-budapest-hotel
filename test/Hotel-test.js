@@ -9,10 +9,7 @@ describe('Hotel', () => {
   let roomData;
   let bookingData;
   let hotel2;
-  let futureRoomData;
-  let currentCustomerData2;
-  let roomData2;
-  let bookingData2;
+
 
 
   beforeEach(function() {
@@ -45,29 +42,6 @@ describe('Hotel', () => {
       'numBeds': 1,
       'costPerNight': 491.00
     }];
-    //     "number": 4,
-    //     "roomType": "single room",
-    //     "bidet": false,
-    //     "bedSize": "queen",
-    //     "numBeds": 1,
-    //     "costPerNight": 429.44
-    //   },  
-    //   {
-    //     "number": 12,
-    //     "roomType": "single room",
-    //     "bidet": false,
-    //     "bedSize": "twin",
-    //     "numBeds": 2,
-    //     "costPerNight": 172.09
-    //   },
-    //   {
-    //     "number": 6,
-    //     "roomType": "suite",
-    //     "bidet": false,
-    //     "bedSize": "queen",
-    //     "numBeds": 24,
-    //     "costPerNight": 372.24
-    //   }];
     bookingData = [{
       'id': "5fwrgu4i7k55hl6sz",
       'userID': 9,
@@ -88,12 +62,10 @@ describe('Hotel', () => {
       'date': "2020/01/10",
       'roomNumber': 12,
       'roomServiceCharges': [ ]
-    }
-    ];
+    }];
    
     hotel = new Hotel(currentCustomerData, roomData, bookingData);
 
-    roomData2 = [{undefined}];
     hotel2 = new Hotel(roomData);
     
   });
@@ -140,24 +112,43 @@ describe('Hotel', () => {
     expect(hotel.findTotalSpentOnRooms()).to.equal(491.00);
   });
 
-  //BELOW TESTS ARE FAILING!!!!!//
-  //   it("should be able to filter available rooms by date", () => {
-  //     console.log("is anything even firing?")
-  //     hotel.findAvailableRooms();
-  //     expect(hotel.findAvailableRooms('22/02/01')).to.equal({
-  //             "number": 4,
-  //             "roomType": "single room",
-  //             "bidet": false,
-  //             "bedSize": "queen",
-  //             "numBeds": 1,
-  //             "costPerNight": 429.44
-  //           });
+  // //BELOW TESTS ARE FAILING!!!!!//
+  // it("should be able to filter available rooms by date", () => {
+  //   console.log(hotel.findAvailableRooms("2020/04/22"))
+  //   // let availableRooms = hotel.findAvailableRooms("2020/04/22")
+  //   // expect(availableRooms.length).to.be.equal(0);
+  //   // expect(hotel.bookings).to.be.equal(roomData, bookingData, "2020/04/22")
+  //   // hotel.findAvailableRooms(roomData.roomType)
+  //   expect(hotel.findAvailableRooms("2020/04/22")).to.deep.equal( 
+  //     roomData = [{
+  //       'number': 1,
+  //       'roomType': "residential suite",
+  //       'bidet': true,
+  //       'bedSize': "queen",
+  //       'numBeds': 1,
+  //       'costPerNight': 358.4
+  //     },
+  //     {
+  //       'number': 2,
+  //       'roomType': "suite",
+  //       'bidet': false,
+  //       'bedSize': "full",
+  //       'numBeds': 2,
+  //       'costPerNight': 477.38
+  //     },
+  //     {
+  //       'number': 15,
+  //       'roomType': "single room",
+  //       'bidet': false,
+  //       'bedSize': "king",
+  //       'numBeds': 1,
+  //       'costPerNight': 491.00
+  //     }]);
 
   // it('Should filter available selection by room type', function() {
   //   expect(hotel.roomData).to.be.equal(undefined)
   //   hotel.filterSelectedRoomTypeOnly('residential suite')
   //   expect(hotel.roomData.to.be.equal('residential suite'));
   // });
+  // });
 });
-
-
