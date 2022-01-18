@@ -44,17 +44,17 @@ Use https://gifcap.dev/ to make GIFs
 
 To navigate the website live, a server download is required.
 
--Download the [hotel server](https://github.com/turingschool-examples/webpack-starter-kit) and the [API based server](https://github.com/turingschool-examples/overlook-api).
--Cd into both the server directory and then into the overlook-api directory.
--In the command line, run npm start
--Then clone down this repository:
+- Download the [hotel server](https://github.com/turingschool-examples/webpack-starter-kit) and the [API based server](https://github.com/turingschool-examples/overlook-api).
+- Cd into both the server directory and then into the overlook-api directory.
+- In the command line, run npm start
+- Then clone down this repository:
 
--In your command line, cd into your local directory and clone down this repository -
+- In your command line, cd into your local directory and clone down this repository -
 git clone git@github.com:susannaopal/grand-budapest-hotel.git 
--Install the necessary package dependencies -
--npm install
--Run the command npm start
--With both the server running and this package, and visit http://localhost:8080/ in your browser.
+- Install the necessary package dependencies -
+- npm install
+- Run the command npm start
+- With both the server running and this package, and visit http://localhost:8080/ in your browser.
 
 In order to access the features of the website, you will need to login first:
 - Use these test credentials (alternatively you can use any user's credentials from 1-50):
@@ -65,13 +65,12 @@ password: overlook2021
   - [Susanna Carey](https://github.com/susannaopal)
 
 ## Wins
-	- What went well!
-	- Successes
+	- Seeing the project to completion
+	- Creating the project fully from scratch
 
 ## Challenges + Improvements
-	- What was difficult & how you would like to improve on code/project
-	- Any Bugs
-	- Future Iterations
+	- The planning of classes and methods was tricky at times but initially came together 
+	- Future Iterations: including a manager class and capability 
 
 
 ## Project Specs
