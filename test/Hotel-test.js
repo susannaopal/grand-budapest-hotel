@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import { expect } from "chai";
 import Hotel from '../src/classes/Hotel';
-import Customer from '../src/classes/Customer';
 
 describe('Hotel', () => {
   let hotel;
@@ -16,7 +15,7 @@ describe('Hotel', () => {
    
     currentCustomerData = {
       id: 9,
-      name: 'Joe Bob',
+      name: 'Joe Placid',
     };
     roomData = [{
       'number': 1,
@@ -27,7 +26,7 @@ describe('Hotel', () => {
       'costPerNight': 358.4
     },
     {
-      'number': 2,
+      'number': 24,
       'roomType': "suite",
       'bidet': false,
       'bedSize': "full",
@@ -59,7 +58,7 @@ describe('Hotel', () => {
     },
     {
       'id': "5fwrgu4i7k55hl6t5",
-      'userID': 43,
+      'userID': 9,
       'date': "2020/01/24",
       'roomNumber': 24,
       'roomServiceCharges': [ ]
@@ -73,8 +72,7 @@ describe('Hotel', () => {
     }];
    
     hotel = new Hotel(currentCustomerData, roomData, bookingData);
-
-    hotel2 = new Hotel(roomData);
+    hotel2 = new Hotel([]);
     
   });
   
@@ -88,44 +86,51 @@ describe('Hotel', () => {
   });
 
   it('Should have a rooms property', () => {
-    expect(hotel.rooms).to.be.equal(roomData)
+    expect(hotel.rooms).to.be.equal(roomData);
   });
 
   it('Should have an array of bookings', () => {
-    expect(hotel.bookings).to.be.deep.equal(bookingData)
+    expect(hotel.bookings).to.be.deep.equal(bookingData);
   });
 
   it('Should have a customer property', () => {
-    expect(hotel.currentCustomer).to.be.deep.equal(currentCustomerData)
+    expect(hotel.currentCustomer).to.be.deep.equal(currentCustomerData);
   });
 
   it('Should find current customer booking', () => {
-    expect(hotel.currentCustomerBookings).to.be.equal(undefined)
-    hotel.findCurrentCustomerBookings()
+    expect(hotel.currentCustomerBookings).to.be.equal(undefined);
+    hotel.findCurrentCustomerBookings();
     expect(hotel.currentCustomerBookings).to.deep.equal([{
       'id': "5fwrgu4i7k55hl6sz",
       'userID': 9,
       'date': "2020/04/22",
       'roomNumber': 15,
       'roomServiceCharges': [ ]
+    },
+    {
+      'id': "5fwrgu4i7k55hl6t5",
+      'userID': 9,
+      'date': "2020/01/24",
+      'roomNumber': 24,
+      'roomServiceCharges': [ ]
     }]);
-    expect(hotel2.currentCustomerBookings).to.be.equal(undefined)
+    expect(hotel2.currentCustomerBookings).to.be.equal(undefined);
     hotel.findCurrentCustomerBookings()
     expect(hotel2.currentCustomerBookings).to.deep.equal(undefined);
+    
   });
   
   it('Should be able to calculate the total cost of a customer booking', () => {
     hotel.findCurrentCustomerBookings(9);
     hotel.findTotalSpentOnRooms();
-    expect(hotel.findTotalSpentOnRooms()).to.equal(491.00);
+    expect(hotel.findTotalSpentOnRooms()).to.equal(968.38);
   });
 
   it('Should be able to select rooms by date availablity', () => {
     hotel.findAvailableRooms("2020/01/10");
     expect(hotel.unavailableRooms).to.be.a('array');
-    console.log(hotel.unavailableRooms)
     expect(hotel.unavailableRooms.length).to.equal(1);
-    expect(hotel.unavailableRooms).to.deep.equal([12])
+    expect(hotel.unavailableRooms).to.deep.equal([12]);
   });
 
   it('Should be able to select rooms by room type', () => {
