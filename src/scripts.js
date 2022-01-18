@@ -10,17 +10,17 @@ import './images/hotel-background.png';
 import dayjs from "dayjs";
 
 //QUERY SELECTORS
-const submitBtn = document.querySelector('.submission-btn');
-const customerBookingsView = document.querySelector('.customer-bookings-section');
-const availRoomsViews = document.querySelector('.available-rooms-section');
-const tagSubmitBtn = document.querySelector('.submit-tag-view-btn');
-const returnHomeBtn = document.querySelector('.return-bookings-view');
-const bookAvailRoomCard = document.querySelector('.available-rooms-card');
+const submitBtn = document.querySelector('#submBtn');
+const customerBookingsView = document.querySelector('#customerBkgSection');
+const availRoomsViews = document.querySelector('#availRoomsSection');
+const tagSubmitBtn = document.querySelector('#submitTagBtn');
+const returnHomeBtn = document.querySelector('#returnBkgsView');
+const bookAvailRoomCard = document.querySelector('#availRoomsCard');
 const loginSubmissionBtn = document.querySelector('#logInButton');
 const logoutBtn = document.querySelector('#logoutBtn');
-const loginError = document.querySelector('.login-error-msg');
-const loginView = document.querySelector('.user-login-section');
-const dashboardView = document.querySelector('.dashboard-view-section');
+const loginError = document.querySelector('#errorMsg');
+const loginView = document.querySelector('#userLoginSection');
+const dashboardView = document.querySelector('#dashboardViewSection');
 
 //GLOBAL VARIABLES
 let hotel;
