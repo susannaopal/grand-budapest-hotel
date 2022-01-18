@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import dayjs from "dayjs";
+
 class Hotel {
   constructor(currentCustomerData, roomData, bookingData) {  
     this.rooms = roomData;
@@ -10,7 +10,6 @@ class Hotel {
     this.unavailableRooms;
     this.availableRooms;
     this.roomsByTag;
-    this.newBooking;
   }
 
   findCurrentCustomerBookings() {
@@ -18,11 +17,12 @@ class Hotel {
       return booking.userID === this.currentCustomer.id;
     }).sort((a, b) => {
       if (b.date < a.date) { 
-        return - 1 
+        return - 1; 
       } if (b.date > a.date) { 
-        return 1 
+        return 1;
       } else { 
-        return 0 };
+        return 0; 
+      }
     });
     this.currentCustomerBookings = filteredBookings; 
   }
@@ -42,9 +42,9 @@ class Hotel {
   findAvailableRooms(formattedDate) {
     this.unavailableRooms = [];
     this.availableRooms = [];
-    const allFilteredBookings = this.bookings.filter((booking) => {
+    this.bookings.filter((booking) => {
       if (booking.date === formattedDate) {
-        this.unavailableRooms.push(booking.roomNumber)
+        this.unavailableRooms.push(booking.roomNumber);
       }
     });    
     this.rooms.forEach((room) => {
@@ -58,15 +58,13 @@ class Hotel {
 
   filterSelectedRoomTypeOnly(tag) {
     this.roomsByTag = [];
-    const filteredRoomByTag = this.availableRooms.filter((room) => {
+    this.availableRooms.filter((room) => {
       if (room.roomType === tag) {
         this.roomsByTag.push(room);
       }
     });
   }
-
 }
-
 
 export default Hotel;
 

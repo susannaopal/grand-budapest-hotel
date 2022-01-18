@@ -6,7 +6,7 @@ import Hotel from './classes/Hotel';
 import Customer from './classes/Customer';
 import domUpdates from './domUpdates';
 import { fetchAllCustomers, fetchSingleCustomer, fetchAllRooms, fetchAllBookings, postNewBooking } from './apiCalls';
-import './images/hotel-img.png'
+import './images/hotel-img.png';
 import dayjs from "dayjs";
 
 //QUERY SELECTORS
@@ -15,12 +15,12 @@ const customerBookingsView = document.querySelector('.customer-bookings-section'
 const availRoomsViews = document.querySelector('.available-rooms-section');
 const tagSubmitBtn = document.querySelector('.submit-tag-view-btn');
 const returnHomeBtn = document.querySelector('.return-bookings-view');
-const bookAvailRoomCard = document.querySelector('.available-rooms-card')
+const bookAvailRoomCard = document.querySelector('.available-rooms-card');
 const loginSubmissionBtn = document.querySelector('#logInButton');
 const logoutBtn = document.querySelector('#logoutBtn');
 const loginError = document.querySelector('.login-error-msg');
 const loginView = document.querySelector('.user-login-section');
-const dashboardView = document.querySelector('.dashboard-view-section')
+const dashboardView = document.querySelector('.dashboard-view-section');
 
 //GLOBAL VARIABLES
 let hotel;
@@ -37,7 +37,7 @@ const loadApiData = (id) => {
       loadCustomer(customer);
       document.getElementById("calendar").setAttribute("min", today);
       document.getElementById("calendar").setAttribute("value", today);
-    });
+    }).catch(error => console.log(error));
 };
 
 const loadCustomer = (customer) => {
@@ -97,37 +97,11 @@ const addNewBooking = (event) => {
   domUpdates.addHidden(availRoomsViews);
 };
 
-// const updateCustomerBookings = () => {
-//   let updatedInfo = addNewBooking();
-//   updatedInfo.forEach((booking) => {
-//     postNewBooking(customer, formattedDate, roomNumber).then
-//     (result => console.log(result))
-//   }) 
-
-// }
-
-
-
-
 const logoutFromDashboard = () => {
   window.location.reload();
 }
 
-//overlook2021
-
-//to render updated info --> reinstatiate? 
-//how to show it without the posting duplicating
-//what is the way to update the $$$ (new function? new method?)
-//reloading API data or does reinstaitating do that?
-//where would I call this?
-//NEED TO FIGURE OUT:
-// --HOW TO REFRESH THE PAGE SO A USER KNOWS A BOOKING IS CREATED (currently cannot even see the DOM updating despite the posting in the console)
-// --Issue with the fact it is posting MULTIPLE Times but NOT rendering in the page or returning to the page if I try to add or hide that view
-// --HOW TO UPDATE THE DOM WITH $ ONCE A BOOK IS POSTED
-
-
 //EVENT LISTENERS 
-// window.addEventListener('load', loadApiData);
 submitBtn.addEventListener('click', findVacantRooms);
 tagSubmitBtn.addEventListener('click', findFilteredByTagsRooms);
 returnHomeBtn.addEventListener('click', returnToHomePage);

@@ -1,12 +1,10 @@
 import { expect } from "chai";
 import Customer from '../src/classes/Customer';
 
-
 describe('Customer', () => {
   let customer;
   let customer2;
   let customer3;
-
 
   beforeEach(function () {
     customer = new Customer({
@@ -21,7 +19,6 @@ describe('Customer', () => {
       'id': '',
       'name': 'Kelvin Schiller'
     });
-
   });
     
   it('Should be a function', () => {
@@ -40,13 +37,7 @@ describe('Customer', () => {
   it('Should have a name', () => {
     expect(customer.name).to.equal('Leatha Ullrich');
     expect(customer2.name).to.equal('');
-
-  });
-
-  it("should have a first name", () => {
-    expect(customer.getCustomerName()).to.equal('Leatha');
-    expect(customer2.getCustomerName()).to.equal('');
-
+    expect(customer3.name).to.equal('Kelvin Schiller');
   });
 });
 

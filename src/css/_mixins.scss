@@ -1,15 +1,18 @@
-@mixin flexbox($flexDirection, $justifyContent, $alignItems) {
-    display: flex;
-    flex-direction: $flexDirection;
-    justify-content: $justifyContent;
-    align-items: $alignItems;
-  }
+@mixin flexbox($direction, $wrap, $alignContent, $justify, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  align-content: $alignContent;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
   
   @mixin heightAndWidth($height, $width) {
     height: $height;
     width: $width;
   }
 
-  @mixin fontSize($fontSize) {
-    font-size: $fontSize;
-  }
+
+
+
+ 

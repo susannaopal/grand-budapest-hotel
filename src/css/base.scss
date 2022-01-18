@@ -2,32 +2,24 @@
 @import './_mixins';
 
 html {
-  height: 100%;
-  width: 100%;
+  @include heightAndWidth(100%, 100%);
 }
 
 body {
+  @include flexbox(column, none, none, none, none); 
   font-family: 'Quicksand', sans-serif;
   color: $white-text;
   background: $primary-background;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  background-size: cover;
-  
-}
-
-.logged-in-dashboard-section {
-  display: display;
+  background-size: cover; 
 }
 
 nav {
+  @include heightAndWidth(17%, 100%);
   background: $background-color;
   opacity: $opacity;
   margin: 0px;
-  width: 100%;
-  position:fixed;
-  height: 17%;
+  position: fixed;
   padding-top:0;
   margin-bottom: 2%
 }
@@ -36,7 +28,6 @@ h1 {
   text-align: $center-text;
   margin-top: 3%;
   font-size: 2.5em;
-
 }
 
 main {
@@ -54,11 +45,10 @@ main {
   margin-left: 38%;
 }
 
-
 /* ~~~~~ Log-in Page ~~~~~ */
+
 .user-login-section {
-  display: flex;
-  flex-direction: column;
+  @include flexbox(column, none, none, none, none);
   text-align: $center-text;
   position: absolute;
   top: 60%;
@@ -71,10 +61,10 @@ main {
 };
 
 .budapest-hotel-img {
+  @include heightAndWidth(0, 50%);
   display: block;
   margin-left: 30%;
   margin-right: auto;
-  width: 50%
 }
 
 .login-form {
@@ -88,11 +78,9 @@ main {
 }
 
 .dashboard-view-section {
+  @include heightAndWidth(80%, 97%);
+  @include flexbox(none, none, none, flex-start, none);
   margin-top: 10%;
-  width: 97%;
-  height: 80%;
-  display: flex;
-  justify-content: flex-start;
 }
 
 .first-name,
@@ -106,9 +94,7 @@ text-align: $center-text;
 
 .customer-bookings-section,
 .available-rooms-section  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexbox(column, none, none, none, center);
   border: 0;
   margin-left: 8%;
   margin-top: 0;
@@ -121,15 +107,12 @@ text-align: $center-text;
 }
 
 .available-title {
-  display: flex;
-  flex-direction: column;
+  @include flexbox(column, none, none, none, none);
 }
 
 .all-hotel-bookings,
 .available-bookings {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  @include flexbox(row, none, none, none, center);
   width: 100%;
   background-color: $background-color;
   border: $border;
@@ -147,8 +130,7 @@ text-align: $center-text;
 }
 
 .traveler-details-aside {
-  display: flex;
-  flex-direction: column;
+  @include flexbox(column, none, none, none, none);
   background-color: $background-color;
   margin-left: 4.5%;
   margin-top: 6.5%;
@@ -161,23 +143,14 @@ text-align: $center-text;
 }
 
 .all-hotel-bookings-section {
-  display: flex;
+  @include flexbox(none, none, flex-start, none, none);
   text-align: $center-text;
-  justify-content: flex-start;
   height: fit-content;
-
 }
 
 .new-booking-section {
  margin-top: 5%;
  text-align: $center-text;
-}
-
-.past-stays,
-.current-stays {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10%;
 }
 
 .welcome-customer-details,
@@ -187,24 +160,6 @@ text-align: $center-text;
 .room-grid
  {
   border: $border;
-}
-
-/* ~~~~~ Log-in Page ~~~~~ */
-.budapest-hotel-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%
-}
-
-.login-form {
-  color: white;
-}
-
-.user-login-section {
-  font-family: 'Quicksand', sans-serif;
-  text-align: center;
-  font-weight: bolder;
 }
 
 .hidden {
