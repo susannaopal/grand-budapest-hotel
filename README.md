@@ -37,7 +37,9 @@ The project was built utilizing principles of Front End Engineering combined wit
 
 ## Illustrations
 
-Use https://gifcap.dev/ to make GIFs
+![Logging In](https://github.com/susannaopal/grand-budapest-hotel/blob/main/par1-loggin-in.gif)
+![Customer's bookings and checking availablity](https://github.com/susannaopal/grand-budapest-hotel/blob/main/part2-checking.gif)
+![Booking and logging out](https://github.com/susannaopal/grand-budapest-hotel/blob/main/part3-bkg-logout.gif) 
 
 
 ## Install + Setup
