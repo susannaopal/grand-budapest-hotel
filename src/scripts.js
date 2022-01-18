@@ -6,7 +6,7 @@ import Hotel from './classes/Hotel';
 import Customer from './classes/Customer';
 import domUpdates from './domUpdates';
 import { fetchAllCustomers, fetchSingleCustomer, fetchAllRooms, fetchAllBookings, postNewBooking } from './apiCalls';
-import './images/hotel-img.png';
+import './images/hotel-background.png';
 import dayjs from "dayjs";
 
 //QUERY SELECTORS
