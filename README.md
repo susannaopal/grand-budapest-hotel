@@ -28,17 +28,17 @@ The project was built utilizing principles of Front End Engineering combined wit
   - Lighthouse
   - Node.js
 
-
-
 ## Code Architecture
   - Javascript
   - HTML
   - SCSS
 
 ## Illustrations
-
+- Customer login:
 ![Logging In](https://github.com/susannaopal/grand-budapest-hotel/blob/main/par1-loggin-in.gif)
+- Customer bookings and date availability:
 ![Customer's bookings and checking availablity](https://github.com/susannaopal/grand-budapest-hotel/blob/main/part2-checking.gif)
+- Customer's new booking and updated amount spent:
 ![Booking and logging out](https://github.com/susannaopal/grand-budapest-hotel/blob/main/part3-bkg-logout.gif) 
 
 
