@@ -14,7 +14,7 @@ Mod 2 Final Solo Project: a Hotel Booking Site
   - [Project Specs](#project-specs)
 
 ## Abstract
-The Grand Budapest Hotel welcomes you to book at our famed establishment, located in the fine city of Zubrowka! This application will allow users to login with their own credentials, take them to their bookings page (showcasing past, present and future bookings) and how much they have spent on their bookings. Additionally, users can select a date and room type selection for future bookings. Once they have booked their room, they will automatically be returned to their bookings and can see their updated bookings information and their account will update how much they have spent.
+The Grand Budapest Hotel welcomes you to book at this famed establishment, located in the fine city of Zubrowka (from the mind of director Wes Anderson)! This application will allow users to login with their own credentials, take them to their bookings page (showcasing past, present and future bookings) and how much they have spent on their bookings. Additionally, users can select a date and room type selection for future bookings. Once they have booked their room, they will automatically be returned to their bookings and can see their updated bookings information and their account will update how much they have spent.
 
 The project was built utilizing principles of Front End Engineering combined with a variety of newly introduced concepts such as Webpack, network requests and responses, a 3rd party NPM dependency, and Test Driven Development using the Mocha and Chai.
 
